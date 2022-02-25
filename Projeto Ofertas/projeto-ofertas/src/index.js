@@ -4,10 +4,16 @@ import './index.css';
 import App from './App';
 import Home from '../src/paginas/home-empresas.jsx';
 import reportWebVitals from './reportWebVitals';
+import Login from '../src/pages/login.jsx'
+import './assets/css/login.css'
 
 ReactDOM.render(
   <React.StrictMode>
+<<<<<<< HEAD
     <Home />
+=======
+    <Login />
+>>>>>>> 4740ef7c7319ce7d278496bb9adc2f9f56df92d6
   </React.StrictMode>,
   document.getElementById('root')
 );
