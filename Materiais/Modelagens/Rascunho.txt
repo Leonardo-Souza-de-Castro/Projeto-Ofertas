@@ -1,0 +1,52 @@
+tipoUsuario
+  -idTipoUsuario
+  -NomeTipoUsuario
+
+usuario
+  -IdUsuario
+  -IdTipoUsuario
+  -Email
+  -Senha
+
+endereco
+  -idEndereco
+  -IdEstado
+  -cep
+
+instituicao
+  -idIntituicao
+  -idUsuario
+  -idEndereco
+  -nomeFantasia
+  -cnpj
+
+cliente
+  -idCliente
+  -idUsuario
+  -nome
+  -cpf
+
+tipoProduto
+  -idTipoProduto
+  -titulo
+
+produto
+  -idProduto
+  -idTipoProduto
+  -idInstituicao
+  -preco
+  -quantidade
+  -descricao
+  -dataValidade 
+
+situacao
+  -idSituacao
+  -titulo
+
+reserva
+  -idReserva
+  -idSituacao 
+  -idProduto
+  -idReservando 
+  -dataSolicitacao 
+  -descricao
