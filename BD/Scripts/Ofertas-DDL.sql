@@ -80,7 +80,8 @@ CREATE TABLE Reserva(
 	IdReserva INT PRIMARY KEY IDENTITY(1,1),
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
 	IdSituacaoReserva INT FOREIGN KEY REFERENCES SituacaoReserva(IdSituacaoReserva),
-	IdProduto INT FOREIGN KEY REFERENCES Produto(IdProduto)
+	IdProduto INT FOREIGN KEY REFERENCES Produto(IdProduto),
+	QuantidadeReservada SMALLINT NOT NULL
 );
 GO
 
