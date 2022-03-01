@@ -5,7 +5,7 @@ import logo from '../assets/img/Group 2.svg';
 import facebook from '../assets/img/facebook.svg';
 import instagram from '../assets/img/instagram.svg'; 
 import twitter from '../assets/img/twitter.svg';
-import '../assets/css/login.css';
+import '../assets/CSS/login.css';
 
 
 export default class Login extends Component {
