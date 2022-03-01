@@ -1,6 +1,10 @@
 Create Database OFERTA;
 GO
 
+USE OFERTA;
+GO
+
+
 CREATE TABLE TipoUsuario(
 	IdTipoUsuario INT PRIMARY KEY IDENTITY(1,1),
 	TipoUsuario VARCHAR(20) NOT NULL UNIQUE
