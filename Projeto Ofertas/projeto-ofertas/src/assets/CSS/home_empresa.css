@@ -44,3 +44,20 @@
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-size: 15px;
 }
+
+.check_doacao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn_doar{
+    width: 25%;
+    height: 7%;
+    border-radius: 10px;
+    background: #D1E4FB;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 14px;
+    /* font-weight: bold; */
+    text-transform: uppercase;
+}
