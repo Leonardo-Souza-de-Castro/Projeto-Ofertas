@@ -1,11 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Home from '../src/paginas/home-principal';
 import reportWebVitals from './reportWebVitals';
-// import Login from '../src/pages/login.jsx'
-// import './assets/css/login.css'
+
+import './index.css';
 
 import {
   Route,
@@ -14,13 +11,27 @@ import {
   Switch,
 } from 'react-router-dom';
 
+import Home from '../src/paginas/home-principal';
+import Login from '../src/pages/login.jsx';
+import Home_Empresa from '../src/paginas/home-empresa.jsx';
+import NotFound from './paginas/not_found.jsx';
+// import './assets/css/login.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Home />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const routing = (
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/Login" component={Login} />
+        <Route path="/Empresa" component={Home_Empresa} />
+        <Route path="/NotFound" component={NotFound} />
+        <Redirect to='/NotFound'/>
+      </Switch>
+    </div>
+  </Router>
+)
+
+ReactDOM.render(routing, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

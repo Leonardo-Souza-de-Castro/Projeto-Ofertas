@@ -2,7 +2,8 @@ import { Component } from 'react';
 import React from "react";
 import {
     BrowserRouter as Router,
-    Link
+    Link,
+    Redirect
 } from "react-router-dom";
 
 import logo from '../assets/img/logo-branca.svg'
@@ -26,10 +27,10 @@ export default class Home extends Component {
         return (
             <div>
                 <header className="cabecalhohome">
-                    <div className="container">
+                    <div className="containerhome">
                         <img src={logo} alt="Logo do nosso site" />
-                        {/* <Link to='/' className="link_cadastro">Já tem uma conta? Cadastre-se</Link> */}
-                        <a className="link_cadastro">Já tem uma conta? Cadastre-se</a>
+                        <Link to='/Empresa' className="link_cadastro">Já tem uma conta? Logue</Link>
+                        {/* <a className="link_cadastro">Já tem uma conta? Cadastre-se</a> */}
                     </div>
                 </header>
                 <section className="container_tipos_perfil">
@@ -39,17 +40,17 @@ export default class Home extends Component {
                             <div className="box-conteudo-principal">
                                 <h2>Empresa</h2>
                                 <p>Se você possui uma empresa e veio aqui, pode fazer uma doação para nossas ONG´s parceiras ou colocar seus produtos em oferta em nossa plataforma.</p>
-                                <button className='btn_cadastro'>Cadastre-se como empresa</button>
+                                <Link to='/cadastrarempresa' className='btn_cadastro'>Cadastre-se como empresa</Link>
                             </div>
                             <div className="box-conteudo-principal">
                                 <h2>ONG</h2>
                                 <p>Se você é uma ONG, tem o direito acessar ofertas de nossas empresas parceiras e de arrecadar doações das mesmas e de pessoas voluntárias.</p>
-                                <button className='btn_cadastro'>Cadastre-se como ONG</button>
+                                <Link to='/cadastrarong' className='btn_cadastro'>Cadastre-se como ONG</Link>
                             </div>
                             <div className="box-conteudo-principal">
                                 <h2>Pessoa Fisica</h2>
                                 <p>Se você veio aqui para comprar ou doar, faça seu cadastro aqui e começe a mudar vidas!</p>
-                                <button className='btn_cadastro'>Cadastre-se como pessoa física</button>
+                                <Link to='/cadastrarcliente' className='btn_cadastro'>Cadastre-se como pessoa física</Link>
                             </div>
                         </div>
                     </div>
