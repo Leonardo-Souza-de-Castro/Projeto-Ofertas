@@ -12,21 +12,21 @@ namespace senai_harmony_webAPI.Interfaces
         /// Lista todos os clientes
         /// </summary>
         /// <returns>Uma lista de clientes</returns>
-        List<Cliente> Listar();
+        List<ClienteController> Listar();
 
 
         /// <summary>
         /// Cadastra um novo cliente
         /// </summary>
         /// <param name="novoCliente">Objeto novoCliente que será cadastrado</param>
-        void Cadastrar(Cliente novoCliente);
+        void Cadastrar(ClienteController novoCliente);
 
         /// <summary>
         /// Atualiza um cliente existente
         /// </summary>
         /// <param name="id">ID do cliente que será atualizado</param>
         /// <param name="clienteAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Cliente clienteAtualizado);
+        void Atualizar(int id, ClienteController clienteAtualizado);
 
         /// <summary>
         /// Deleta um cliente existente
@@ -39,6 +39,6 @@ namespace senai_harmony_webAPI.Interfaces
         /// </summary>
         /// <param name="id">ID do cliente que será buscado</param>
         /// <returns>Um cliente buscado</returns>
-        Cliente BuscarPorId(int id);
+        ClienteController BuscarPorId(int id);
     }
 }

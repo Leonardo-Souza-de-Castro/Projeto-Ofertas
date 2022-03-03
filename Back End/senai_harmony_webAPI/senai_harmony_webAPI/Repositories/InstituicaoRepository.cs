@@ -9,17 +9,17 @@ namespace senai_harmony_webAPI.Repositories
 {
     public class InstituicaoRepository : IInstituicaoRepository
     {
-        public void Atualizar(int id, Instituicao empresaAtualizado)
+        public void Atualizar(int id, InstituicaoController empresaAtualizado)
         {
             throw new NotImplementedException();
         }
 
-        public Instituicao BuscarPorId(int id)
+        public InstituicaoController BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(Instituicao novaEmpresa)
+        public void Cadastrar(InstituicaoController novaEmpresa)
         {
             throw new NotImplementedException();
         }
@@ -29,7 +29,7 @@ namespace senai_harmony_webAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Instituicao> Listar()
+        public List<InstituicaoController> Listar()
         {
             throw new NotImplementedException();
         }

@@ -13,41 +13,20 @@ namespace senai_harmony_webAPI.Interfaces
         /// Lista todos as reservas
         /// </summary>
         /// <returns>Uma lista de reservas</returns>
-        List<Reserva> Listar();
-
-        /// <summary>
-        /// Lista todos as reservas do cliente
-        /// </summary>
-        /// <param name="idCliente">ID do cliente</param>
-        /// <returns>Uma lista de reservas</returns>
-        List<Reserva> ListarCliente(int idCliente);
-
-        /// <summary>
-        /// Lista todos as reservas da instituição
-        /// </summary>
-        /// <param name="idEmpresa">ID da empresa</param>
-        /// <returns>Uma lista de reservas</returns>
-        List<Reserva> ListarEmpresa(int idEmpresa);
-
-        /// <summary>
-        /// Lista todos as reservas da instituição que precisam de aprovação
-        /// </summary>
-        /// <param name="idEmpresa">ID da empresa</param>
-        /// <returns>Uma lista de reservas</returns>
-        List<Reserva> ListarPendentes(int idEmpresa);
+        List<ReservaController> Listar();
 
         /// <summary>
         /// Cadastra uma nova reserva
         /// </summary>
-        /// <param name="novaReserva">Objeto novaReserva que será cadastrado</param>
-        void Criar(Reserva novaReserva);
+        /// <param name="NovaReserva">Objeto NovaReserva que será cadastrado</param>
+        void RealizarReserva(ReservaController NovaReserva);
 
         /// <summary>
         /// Atualiza uma reserva existente
         /// </summary>
         /// <param name="id">ID da reserva que será atualizado</param>
-        /// <param name="reservaAtualizado">Objeto com as novas informações</param>
-        void Editar(int id, Reserva reservaAtualizado);
+        /// <param name="ReservaAtualizado">Objeto com as novas informações</param>
+        void Editar(int id, ReservaController ReservaAtualizado);
 
         /// <summary>
         /// Deleta uma reserva existente
@@ -60,7 +39,7 @@ namespace senai_harmony_webAPI.Interfaces
         /// </summary>
         /// <param name="id">ID da reserva que será buscada</param>
         /// <returns>Uma reserva buscado</returns>
-        Reserva BuscarPorId(int id);
+        ReservaController BuscarPorId(int id);
 
     }
 }

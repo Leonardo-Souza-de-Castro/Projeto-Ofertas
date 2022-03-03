@@ -12,20 +12,20 @@ namespace senai_harmony_webAPI.Interfaces
         /// Lista todos as empresas
         /// </summary>
         /// <returns>Uma lista de empresas</returns>
-        List<Instituicao> Listar();
+        List<InstituicaoController> Listar();
 
         /// <summary>
         /// Cadastra uma nova empresa
         /// </summary>
         /// <param name="novaEmpresa">Objeto novaEmpresa que será cadastrado</param>
-        void Cadastrar(Instituicao novaEmpresa);
+        void Cadastrar(InstituicaoController novaEmpresa);
 
         /// <summary>
         /// Atualiza uma empresa existente
         /// </summary>
         /// <param name="id">ID da empresa que será atualizado</param>
         /// <param name="empresaAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Instituicao empresaAtualizado);
+        void Atualizar(int id, InstituicaoController empresaAtualizado);
 
         /// <summary>
         /// Deleta um empresa existente
@@ -38,6 +38,6 @@ namespace senai_harmony_webAPI.Interfaces
         /// </summary>
         /// <param name="id">ID da empresa que será buscada</param>
         /// <returns>Uma empresa buscada</returns>
-        Instituicao BuscarPorId(int id);
+        InstituicaoController BuscarPorId(int id);
     }
 }

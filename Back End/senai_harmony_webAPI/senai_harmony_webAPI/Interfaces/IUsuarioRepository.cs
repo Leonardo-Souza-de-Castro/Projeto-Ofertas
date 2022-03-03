@@ -19,13 +19,6 @@ namespace senai_harmony_webAPI.Interfaces
         Usuario Login(string email, string senha);
 
 
-        //IFormFile Representa um arquivo enviado com o HttpRequest.
-        void SalvarPerfilBD(IFormFile foto, int id_usuario);
-        void SalvarPerfilDir(IFormFile foto, int id_usuario);
-        string ConsultarPerfilBD(int id_usuario);
-        string ConsultarPerfilDir(int id_usuario);
-
-
         /// <summary>
         /// Lista todos os usuários
         /// </summary>
@@ -43,8 +36,9 @@ namespace senai_harmony_webAPI.Interfaces
         /// Atualiza um usuário existente
         /// </summary>
         /// <param name="id">ID do usuário que será atualizado</param>
-        /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Usuario usuarioAtualizado);
+        /// <param name="UsuarioAtualizado">Objeto com as novas informações</param>
+        void Atualizar(int id, Usuario UsuarioAtualizado);
+
 
         /// <summary>
         /// Deleta um usuário existente

@@ -9,12 +9,7 @@ namespace senai_harmony_webAPI.Repositories
 {
     public class ReservaRepository : IReservaRepository
     {
-        public Reserva BuscarPorId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Criar(Reserva novaReserva)
+        public ReservaController BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
@@ -24,27 +19,17 @@ namespace senai_harmony_webAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public void Editar(int id, Reserva reservaAtualizado)
+        public void Editar(int id, ReservaController reservaAtualizado)
         {
             throw new NotImplementedException();
         }
 
-        public List<Reserva> Listar()
+        public List<ReservaController> Listar()
         {
             throw new NotImplementedException();
         }
 
-        public List<Reserva> ListarCliente(int idCliente)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Reserva> ListarEmpresa(int idEmpresa)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Reserva> ListarPendentes(int idEmpresa)
+        public void RealizarReserva(ReservaController NovaReserva)
         {
             throw new NotImplementedException();
         }

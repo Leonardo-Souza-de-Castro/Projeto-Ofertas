@@ -11,17 +11,17 @@ namespace senai_harmony_webAPI.Repositories
     public class ClienteRepository : IClienteRepository
     {
 
-        public void Atualizar(int id, Cliente clienteAtualizado)
+        public void Atualizar(int id, ClienteController clienteAtualizado)
         {
             throw new NotImplementedException();
         }
 
-        public Cliente BuscarPorId(int id)
+        public ClienteController BuscarPorId(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void Cadastrar(Cliente novoCliente)
+        public void Cadastrar(ClienteController novoCliente)
         {
             throw new NotImplementedException();
         }
@@ -31,7 +31,7 @@ namespace senai_harmony_webAPI.Repositories
             throw new NotImplementedException();
         }
 
-        public List<Cliente> Listar()
+        public List<ClienteController> Listar()
         {
             throw new NotImplementedException();
         }
