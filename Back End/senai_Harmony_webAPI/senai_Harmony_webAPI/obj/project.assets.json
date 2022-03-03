@@ -6638,11 +6638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\senai_Harmony_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\BD\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\senai_Harmony_webAPI.csproj",
       "projectName": "senai_Harmony_webAPI",
-      "projectPath": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\senai_Harmony_webAPI.csproj",
+      "projectPath": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\BD\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\senai_Harmony_webAPI.csproj",
       "packagesPath": "C:\\Users\\47524754809.INFOSCS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\obj\\",
+      "outputPath": "C:\\Users\\47524754809.INFOSCS\\Desktop\\Projeto-Ofertas\\BD\\Back End\\senai_Harmony_webAPI\\senai_Harmony_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
