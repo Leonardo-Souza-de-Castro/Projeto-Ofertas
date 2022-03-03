@@ -40,7 +40,7 @@ export default class Home extends Component {
                             <div className="box-conteudo-principal">
                                 <h2>Empresa</h2>
                                 <p>Se você possui uma empresa e veio aqui, pode fazer uma doação para nossas ONG´s parceiras ou colocar seus produtos em oferta em nossa plataforma.</p>
-                                <Link to='/cadastrarempresa' className='btn_cadastro'>Cadastre-se como empresa</Link>
+                                <Link to='/cadastroempresa' className='btn_cadastro'>Cadastre-se como empresa</Link>
                             </div>
                             <div className="box-conteudo-principal">
                                 <h2>ONG</h2>

@@ -20,6 +20,7 @@ export default class Home_Empresas extends Component {
             Quantidade: 0,
             StatusProduto: true,
             Imagem: '',
+            Id: 0,
 
             TipoProduto: [],
             // Finalidade: []
@@ -27,7 +28,7 @@ export default class Home_Empresas extends Component {
     }
 
     BuscarTipos() {
-        axios('https://621f854cce99a7de193f9ef6.mockapi.io/TipoProduto', {
+        axios.get('https://621f854cce99a7de193f9ef6.mockapi.io/TipoProduto', {
 
         }).then((resposta) => {
             if (resposta.status === 200) {
@@ -39,6 +40,7 @@ export default class Home_Empresas extends Component {
     }
 
     atualizaStateCampo = (campo) => {
+        
         this.setState({ [campo.target.name]: campo.target.value });
     };
 
@@ -55,7 +57,7 @@ export default class Home_Empresas extends Component {
             TipoProduto: this.state.TipoProduto
         }
 
-        axios.post('https://621f854cce99a7de193f9ef6.mockapi.io/Produto', produto)
+        axios.post('https://621f854cce99a7de193f9ef6.mockapi.io/TipoProduto/5/Produto', produto)
             .then(resposta => {
                 if (resposta.status === 201) {
                     console.log('Produto Cadastrado')
@@ -66,6 +68,7 @@ export default class Home_Empresas extends Component {
                         Quantidade: 0,
                         StatusProduto: true,
                         Imagem: '',
+                        id: 0,
 
                         TipoProduto: [],
                         // Finalidade: []
@@ -82,14 +85,14 @@ export default class Home_Empresas extends Component {
 
     componentDidMount() {
         this.BuscarTipos()
-
+        console.log(this.state.Id)
         // console.log(this.state.idConsulta)
     }
 
     render() {
         return (
             <div>
-                <header className="cabecalhohome">
+                <header className="cabecalhohomeempresa">
                     <div className="containerhome">
                         <img src={logo} alt="Logo do nosso site" />
                         <img src={perfil} alt="Perfil" />
@@ -110,11 +113,11 @@ export default class Home_Empresas extends Component {
                             <option value="5">25</option>
                             <option value="6">30</option>
                         </select>
-                        <select className='input-cadastro' name="TipoProduto" value={this.state.TipoProduto} onChange={this.atualizaStateCampo}>
+                        <select className='input-cadastro' name="id" value={this.state.id} onChange={this.atualizaStateCampo}>
                             <option value="0">Tipo de Produto</option>
                             {this.state.TipoProduto.map((tema) => {
                                 return (
-                                    <option key={tema.Id} value={tema.Id}>
+                                    <option key={tema.id} value={tema.id}>
                                         {tema.TipoProduto}
                                     </option>
                                 );

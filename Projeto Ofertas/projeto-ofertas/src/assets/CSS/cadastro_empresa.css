@@ -1,0 +1,40 @@
+.Fundo_Cadastro{
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/fundo_cadastro_usuario.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-cadastro-usuario{
+    width: 80%;
+    height: 80%;
+}
+
+.formulario-cadastro-usuario{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    background: rgba(142, 157, 178, 0.78);
+    border-radius: 7px;
+}
+
+.coluna1{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: space-around;
+    height: 25%;
+}
+
+.input-cadastro-usuario{
+    height: 30%;
+    width: 100%;
+    border-radius: 10px;
+}

@@ -15,6 +15,7 @@ import Home from '../src/paginas/home-principal';
 import Login from '../src/pages/login.jsx';
 import Home_Empresa from '../src/paginas/home-empresa.jsx';
 import NotFound from './paginas/not_found.jsx';
+import CadastroEmpresa from './paginas/cadastro-empresa';
 // import './assets/css/login.css'
 
 const routing = (
@@ -24,6 +25,7 @@ const routing = (
         <Route exact path="/" component={Home} />
         <Route path="/Login" component={Login} />
         <Route path="/Empresa" component={Home_Empresa} />
+        <Route path="/CadastroEmpresa" component={CadastroEmpresa} />
         <Route path="/NotFound" component={NotFound} />
         <Redirect to='/NotFound'/>
       </Switch>
