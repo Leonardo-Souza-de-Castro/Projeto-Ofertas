@@ -70,8 +70,8 @@ CREATE TABLE Produto(
 	Descricao VARCHAR(300) NOT NULL,
 	Quantidade SMALLINT NOT NULL,
 	Preco FLOAT NOT NULL,
-	DataValidade VARCHAR NOT NULL,
-	Imagem VARCHAR NOT NULL
+	DataValidade DATE NOT NULL,
+	Imagem VArCHAR(70) NOT NULL
 );
 GO
 

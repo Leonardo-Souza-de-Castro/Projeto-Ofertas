@@ -20,7 +20,7 @@ GO
 
 
 INSERT INTO Usuario (IdTipoUsuario, Email, Senha)
-VALUES (1,'ClienteComum@Gmail.com', 'omum123' ), (2,'ClienteBaixa@Gmail.com', 'baixarenda123'), 
+VALUES (1,'ClienteComum@Gmail.com', 'comum123' ), (2,'ClienteBaixa@Gmail.com', 'baixarenda123'), 
 	  (3,'ONG@Gmail.com', 'ONG123'), (4,'Empresa@Gmail.com', 'empresa123');
 GO
 
@@ -51,17 +51,17 @@ GO
 
 
 INSERT INTO Finalidade (Finalidade)
-VALUES ('Doação'), ('Compra'), ('Oferta');
+VALUES ('Doação'), ('Oferta');
 GO
 
 
 INSERT INTO Produto (IdUsuario, IdTipoProduto, IdFinalidade, NomeProduto, Descricao, Quantidade, Preco, DataValidade, Imagem)
 VALUES (1, 2, 2, 'Bolacha Trakinas', 'O Biscoito Recheado Trakinas possui uma deliciosa massa crocante e recheio saboroso. Sua embalagem é compacta, podendo ser levada para onde quiser. Ideal para qualquer ocasião', 
-		3, 2, '7/3/2024', '0450' ),
-		(2, 2, 1, 'Salgadinho Torcida', 'TORCIDA® é a marca brasileira que conquistou todas as faixas etárias, inclusive os adultos, sendo o aperitivo perfeito para acompanhar os jogos de futebol e a roda de amigos.', 
-		1, 1, '3/2/2022', '5000' ),
-		(4, 2, 3, 'Chá doce', 'O prazer do sabor equilibrado, forte, com aroma intenso e que promove a cada amanhecer, experiências apaixonantes ao lado de quem mais amamos. Um clássico trazendo de suas raízes o gosto perfeito a cada xícara', 
-		1, 6.5, '14/5/2023', '0560' );
+		3, 2.00, '2024-07-05', '1450' ),
+		(2, 1, 1, 'Salgadinho Torcida', 'TORCIDA® é a marca brasileira que conquistou todas as faixas etárias, inclusive os adultos, sendo o aperitivo perfeito para acompanhar os jogos de futebol e a roda de amigos.', 
+		1, 1.00, '2024-05-05', '5000' ),
+		(4, 2, 2, 'Chá doce', 'O prazer do sabor equilibrado, forte, com aroma intenso e que promove a cada amanhecer, experiências apaixonantes ao lado de quem mais amamos. Um clássico trazendo de suas raízes o gosto perfeito a cada xícara', 
+		1, 6.50, '2024-07-03', '0560' );
 GO
 
 

@@ -32,7 +32,6 @@ INNER JOIN TipoUsuario
 ON Usuario.IdTipoUsuario = TipoUsuario.IdTipoUsuario
 
 
---Mostrar Médicos, Epecialidade e Nome da Clinica
 SELECT NomeProduto, Descricao, Finalidade, TipoProduto
 FROM Produto
 INNER JOIN Finalidade
@@ -40,6 +39,17 @@ ON Produto.IdFinalidade = Finalidade.IdFinalidade
 INNER JOIN TipoProduto
 ON Produto.IdTipoProduto = TipoProduto.IdTipoProduto
 GO
+
+SELECT Email, SituacaoReserva, NomeProduto, QuantidadeReservada
+FROM Reserva
+INNER JOIN Usuario
+ON Reserva.IdUsuario = Usuario.IdUsuario
+INNER JOIN SituacaoReserva
+ON Reserva.IdSituacaoReserva = SituacaoReserva.IdSituacaoReserva
+INNER JOIN Produto
+ON Reserva.IdProduto = Produto.IdProduto
+GO
+
 -- Converter Data da Consulta do Usuário para Formato (mm-dd-yyyy) 
 SELECT FORMAT (DataValidade, 'dd/MM/yyyy')[Data Consulta]  FROM Produto;
 GO
