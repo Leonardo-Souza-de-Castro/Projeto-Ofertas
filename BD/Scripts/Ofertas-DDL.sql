@@ -66,6 +66,7 @@ CREATE TABLE Produto(
 	IdUsuario INT FOREIGN KEY REFERENCES Usuario(IdUsuario),
 	IdTipoProduto INT FOREIGN KEY REFERENCES TipoProduto(IdTipoProduto),
 	IdFinalidade INT FOREIGN KEY REFERENCES Finalidade(IdFinalidade),
+	NomeProduto VARCHAR(60) NOT NULL,
 	Descricao VARCHAR(300) NOT NULL,
 	Quantidade SMALLINT NOT NULL,
 	Preco FLOAT NOT NULL,

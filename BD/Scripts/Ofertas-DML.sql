@@ -55,13 +55,13 @@ VALUES ('Doação'), ('Compra'), ('Oferta');
 GO
 
 
-INSERT INTO Produto (IdUsuario, IdTipoProduto, IdFinalidade, Descricao, Quantidade, Preco, DataValidade, Imagem)
-VALUES (1, 2, 2, 'O Biscoito Recheado Trakinas possui uma deliciosa massa crocante e recheio saboroso. Sua embalagem é compacta, podendo ser levada para onde quiser. Ideal para qualquer ocasião', 
-		3, 2, '07/03/2024', '0450' ),
-		(2, 2, 1, 'TORCIDA® é a marca brasileira que conquistou todas as faixas etárias, inclusive os adultos, sendo o aperitivo perfeito para acompanhar os jogos de futebol e a roda de amigos.', 
-		1, 1, '03/02/2022', '5000' ),
-		(4, 2, 3, 'O prazer do sabor equilibrado, forte, com aroma intenso e que promove a cada amanhecer, experiências apaixonantes ao lado de quem mais amamos. Um clássico trazendo de suas raízes o gosto perfeito a cada xícara', 
-		1, 6.5, '14/07/2023', '0560' );
+INSERT INTO Produto (IdUsuario, IdTipoProduto, IdFinalidade, NomeProduto, Descricao, Quantidade, Preco, DataValidade, Imagem)
+VALUES (1, 2, 2, 'Bolacha Trakinas', 'O Biscoito Recheado Trakinas possui uma deliciosa massa crocante e recheio saboroso. Sua embalagem é compacta, podendo ser levada para onde quiser. Ideal para qualquer ocasião', 
+		3, 2, '7/3/2024', '0450' ),
+		(2, 2, 1, 'Salgadinho Torcida', 'TORCIDA® é a marca brasileira que conquistou todas as faixas etárias, inclusive os adultos, sendo o aperitivo perfeito para acompanhar os jogos de futebol e a roda de amigos.', 
+		1, 1, '3/2/2022', '5000' ),
+		(4, 2, 3, 'Chá doce', 'O prazer do sabor equilibrado, forte, com aroma intenso e que promove a cada amanhecer, experiências apaixonantes ao lado de quem mais amamos. Um clássico trazendo de suas raízes o gosto perfeito a cada xícara', 
+		1, 6.5, '14/5/2023', '0560' );
 GO
 
 
