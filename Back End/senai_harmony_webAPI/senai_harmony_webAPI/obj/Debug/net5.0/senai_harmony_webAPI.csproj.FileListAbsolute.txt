@@ -64,3 +64,12 @@ C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webA
 C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\ref\senai_harmony_webAPI.dll
 C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.pdb
 C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.genruntimeconfig.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.csproj.AssemblyReference.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.AssemblyInfoInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.AssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.csproj.CoreCompileInputs.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.dll
+C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.pdb
