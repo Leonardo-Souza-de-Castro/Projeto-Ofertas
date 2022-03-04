@@ -81,7 +81,7 @@ namespace senai_harmony_webAPI.Repositories
 
         public List<Cliente> Listar()
         {
-            return ctx.Cliente.Include(C => C.IdEnderecoNavigation).ToList();
+            return ctx.Cliente.ToList();
         }
 
  

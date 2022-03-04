@@ -136,3 +136,9 @@ C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\refint\senai_harmony_webAPI.dll
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.genruntimeconfig.cache
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\ref\senai_harmony_webAPI.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\System.Data.SqlClient.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\runtimes\win-arm64\native\sni.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\runtimes\win-x64\native\sni.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\runtimes\win-x86\native\sni.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\46755453862.INFOSCS\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

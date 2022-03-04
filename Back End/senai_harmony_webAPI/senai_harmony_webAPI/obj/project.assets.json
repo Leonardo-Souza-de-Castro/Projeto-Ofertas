@@ -7752,19 +7752,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\mathe\\.nuget\\packages\\": {}
+    "C:\\Users\\46755453862.INFOSCS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\46755453862.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
       "projectName": "senai_harmony_webAPI",
-      "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
-      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\46755453862.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
+      "packagesPath": "C:\\Users\\46755453862.INFOSCS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\46755453862.INFOSCS\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\46755453862.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7835,6 +7835,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.14, 5.0.14]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
