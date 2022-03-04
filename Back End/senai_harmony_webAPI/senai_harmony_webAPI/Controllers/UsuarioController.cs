@@ -40,7 +40,7 @@ namespace senai_harmony_webAPI.Controllers
         /// </summary>
         /// <param name="IdUsuario">ID do usuário que será buscado</param>
         /// <returns>Um usuário buscado e um status code 200 - Ok</returns>
-        [HttpGet("{IdUsuario}")]
+        [HttpGet("IdUsuario")]
         public IActionResult BuscarpPorId(int IdUsuario)
         {
             Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(IdUsuario);
@@ -71,7 +71,7 @@ namespace senai_harmony_webAPI.Controllers
         /// <param name="id">ID do usuário que será atualizado</param>
         /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
         /// <returns>Um status code 204 - No Content</returns>
-        [HttpPut("{id}")]
+        [HttpPut("id")]
         public IActionResult Put(int id, Usuario usuarioAtualizado)
         {
             try
@@ -94,7 +94,7 @@ namespace senai_harmony_webAPI.Controllers
         /// </summary>
         /// <param name="idUsuario">id do Usuário a ser deletado</param>
         /// <returns>Um status code 204 - No content</returns>
-        [HttpDelete("{idUsuario}")]
+        [HttpDelete("IdUsuario")]
         public IActionResult Deletar(int idUsuario)
         {
             _usuarioRepository.Deletar(idUsuario);

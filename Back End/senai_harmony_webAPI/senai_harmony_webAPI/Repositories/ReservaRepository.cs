@@ -1,4 +1,7 @@
-﻿using senai_harmony_webAPI.Controllers;
+﻿using Microsoft.EntityFrameworkCore;
+using senai_harmony_webAPI.Context;
+using senai_harmony_webAPI.Controllers;
+using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,29 +12,47 @@ namespace senai_harmony_webAPI.Repositories
 {
     public class ReservaRepository : IReservaRepository
     {
-        public ReservaController BuscarPorId(int id)
+        OFERTAContext ctx = new OFERTAContext();
+
+
+        public Reserva BuscarPorId(int id)
         {
-            throw new NotImplementedException();
+            return ctx.Reservas.FirstOrDefault(p => p.IdReserva == id);
+        }
+
+        public void RealizarReserva(Reserva NovaReserva)
+        {
+            ctx.Reservas.Add(NovaReserva);
+            ctx.SaveChanges();
         }
 
         public void Deletar(int id)
         {
-            throw new NotImplementedException();
+            Reserva ReservaBusca = BuscarPorId(id);
+
+            ctx.Reservas.Remove(ReservaBusca);
+
+            ctx.SaveChanges();
         }
 
-        public void Editar(int id, ReservaController reservaAtualizado)
+        public void EditarReserva(int id, Reserva ReservaAtualizado)
         {
-            throw new NotImplementedException();
+            Reserva reservaBuscado = BuscarPorId(id);
+
+            if (ReservaAtualizado.IdSituacaoReserva != null)
+            {
+                reservaBuscado.IdSituacaoReserva = ReservaAtualizado.IdSituacaoReserva;
+            }
+
+            ctx.Reservas.Update(reservaBuscado);
+
+            ctx.SaveChanges();
         }
 
-        public List<ReservaController> Listar()
+        public List<Reserva> Listar()
         {
-            throw new NotImplementedException();
-        }
+            return ctx.Reservas.ToList();
 
-        public void RealizarReserva(ReservaController NovaReserva)
-        {
-            throw new NotImplementedException();
         }
     }
 }

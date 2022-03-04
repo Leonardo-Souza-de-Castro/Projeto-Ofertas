@@ -18,7 +18,7 @@ namespace senai_harmony_webAPI.Context
         {
         }
 
-        public virtual DbSet<Cliente> Clientes { get; set; }
+        public virtual DbSet<Cliente> Cliente { get; set; }
         public virtual DbSet<Endereco> Enderecos { get; set; }
         public virtual DbSet<Finalidade> Finalidades { get; set; }
         public virtual DbSet<Instituicao> Instituicaos { get; set; }

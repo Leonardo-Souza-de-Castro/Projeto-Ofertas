@@ -14,5 +14,8 @@ namespace senai_harmony_webAPI.Domains
         public string Nis { get; set; }
 
         public virtual Usuario IdUsuarioNavigation { get; set; }
+        public object IdEnderecoNavigation { get; internal set; }
+        public virtual ICollection<Reserva> Reservas { get; set; }
+
     }
 }
