@@ -65,9 +65,6 @@ namespace senai_harmony_webAPI.Controllers
 
                 return StatusCode(201);
             
-
-            return BadRequest("Usuario já cadastrado!");
-            
         }
 
         /// <summary>
