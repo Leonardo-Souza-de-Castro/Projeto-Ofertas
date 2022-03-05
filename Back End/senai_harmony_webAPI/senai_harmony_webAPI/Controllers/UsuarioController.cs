@@ -90,16 +90,15 @@ namespace senai_harmony_webAPI.Controllers
             }
         }
 
-
         /// <summary>
-        /// Deleta um usuário
+        /// Deleta um usuário existente
         /// </summary>
-        /// <param name="Id">id do Usuário a ser deletado</param>
-        /// <returns>Um status code 204 - No content</returns>
-        [HttpDelete("{Id}")]
-        public IActionResult Deletar(int Id)
+        /// <param name="IdUsuario">ID do usuário que será deletado</param>
+        /// <returns>Um status code 204 - No Content</returns>
+        [HttpDelete("{IdUsuario}")]
+        public IActionResult Delete(int IdUsuario)
         {
-            _usuarioRepository.Deletar(Id);
+            _usuarioRepository.Deletar(IdUsuario);
 
             return StatusCode(204);
         }

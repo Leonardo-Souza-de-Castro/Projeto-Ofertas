@@ -13,8 +13,10 @@ namespace senai_harmony_webAPI.Domains
         public int? IdProduto { get; set; }
         public short QuantidadeReservada { get; set; }
 
+
         public virtual Produto IdProdutoNavigation { get; set; }
         public virtual SituacaoReserva IdSituacaoReservaNavigation { get; set; }
         public virtual Usuario IdUsuarioNavigation { get; set; }
+        public virtual Cliente IdClienteNavigation { get; set; }
     }
 }
