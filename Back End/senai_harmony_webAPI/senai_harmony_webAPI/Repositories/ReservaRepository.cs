@@ -27,7 +27,8 @@ namespace senai_harmony_webAPI.Repositories
 
         public void FazerReserva(Reserva NovaReserva)
         {
-            throw new NotImplementedException();
+            ctx.Reservas.Add(NovaReserva);
+            ctx.SaveChanges(); 
         }
 
         public void AtualizarReserva(int Id, Reserva ReservaAtualizada)
