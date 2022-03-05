@@ -69,16 +69,16 @@ namespace senai_harmony_webAPI.Controllers
         /// <summary>
         /// Atualiza umCliente existente
         /// </summary>
-        /// <param name="id">ID do usuário que será atualizado</param>
+        /// <param name="Id">ID do usuário que será atualizado</param>
         /// <param name="ClienteAtualizado">Objeto com as novas informações</param>
         /// <returns>Um status code 204 - No Content</returns>
-        [HttpPut("id")]
-        public IActionResult Put(int id, Cliente ClienteAtualizado)
+        [HttpPut("Id")]
+        public IActionResult Put(int Id, Cliente ClienteAtualizado)
         {
             try
             {
                 // Faz a chamada para o método
-                _ClienteRepository.Atualizar(id, ClienteAtualizado);
+                _ClienteRepository.Atualizar(Id, ClienteAtualizado);
 
                 // Retorna um status code
                 return StatusCode(204);
@@ -93,12 +93,12 @@ namespace senai_harmony_webAPI.Controllers
         /// <summary>
         /// Deleta um usuário
         /// </summary>
-        /// <param name="IdCliente">id do Cliente a ser deletado</param>
+        /// <param name="Id">id do Cliente a ser deletado</param>
         /// <returns>Um status code 204 - No content</returns>
-        [HttpDelete("IdCliente")]
-        public IActionResult Deletar(int idUsuario)
+        [HttpDelete("Id")]
+        public IActionResult Deletar(int Id)
         {
-            _ClienteRepository.Deletar(idUsuario);
+            _ClienteRepository.Deletar(Id);
 
             return StatusCode(204);
         }

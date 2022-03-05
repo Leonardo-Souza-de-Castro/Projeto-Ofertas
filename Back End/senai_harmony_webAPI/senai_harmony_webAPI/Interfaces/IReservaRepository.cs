@@ -11,35 +11,35 @@ namespace senai_harmony_webAPI.Interfaces
     {
 
         /// <summary>
-        /// Lista todos as reservas
+        /// Lista todas as Reservas
         /// </summary>
-        /// <returns>Uma lista de reservas</returns>
+        /// <returns>Uma Lista de Reservas</returns>
         List<Reserva> Listar();
 
         /// <summary>
-        /// Cadastra uma nova reserva
+        /// Cadastra uma nova Reserva
         /// </summary>
-        /// <param name="NovaReserva">Objeto NovaReserva que será cadastrado</param>
-        void FazerReserva(Reserva NovaReserva);
+        /// <param name="NovaReserva">Objeto NovaReserva que será cadastrada</param>
+        void Cadastrar(Reserva NovaReserva);
 
         /// <summary>
-        /// Atualiza uma reserva existente
+        /// Atualiza uma Reserva existente
         /// </summary>
-        /// <param name="Id">ID da reserva que será atualizado</param>
+        /// <param name="Id">Id da Reserva que será atualizada</param>
         /// <param name="ReservaAtualizada">Objeto com as novas informações</param>
-        void AtualizarReserva(int Id, Reserva ReservaAtualizada);
+        void Atualizar(int Id, Reserva ReservaAtualizada);
 
         /// <summary>
-        /// Deleta uma reserva existente
+        /// Deleta uma Reserva existente
         /// </summary>
-        /// <param name="Id">ID da reserva que será deletada</param>
+        /// <param name="Id">ID da Reserva que será deletada</param>
         void Deletar(int Id);
 
         /// <summary>
-        /// Busca uma reserva através do ID
+        /// Busca uma Reserva através do ID
         /// </summary>
-        /// <param name="Id">ID da reserva que será buscada</param>
-        /// <returns>Uma reserva buscado</returns>
+        /// <param name="Id">ID da Reserva que será buscada</param>
+        /// <returns>Uma Reserva buscada</returns>
         Reserva BuscarPorId(int Id);
 
     }

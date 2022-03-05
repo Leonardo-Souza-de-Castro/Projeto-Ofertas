@@ -14,49 +14,62 @@ namespace senai_harmony_webAPI.Repositories
     {
         OFERTAContext ctx = new OFERTAContext();
 
-        public List<Reserva> Listar()
+        /// <summary>
+        /// Atualiza uma reserva existente
+        /// </summary>
+        /// <param name="Id">ID da reserva que será atualizada</param>
+        /// <param name="ReservaAtualizada">Objeto com as novas informações</param>
+        public void Atualizar(int Id, Reserva ReservaAtualizada)
         {
-            return ctx.Reservas.ToList();
+            Reserva ReservaBuscada = ctx.Reservas.Find(Id);
 
+            if (ReservaAtualizada.QuantidadeReservada > 0)
+            {
+                ReservaBuscada.QuantidadeReservada = ReservaAtualizada.QuantidadeReservada;
+            }
+
+            ctx.Reservas.Update(ReservaBuscada);
+
+            ctx.SaveChanges(); ;
         }
 
+        /// <summary>
+        /// Busca uma reserva através do ID
+        /// </summary>
+        /// <param name="Id">ID da reserva que será buscada</param>
+        /// <returns>Uma reserva buscada</returns>
         public Reserva BuscarPorId(int Id)
         {
             return ctx.Reservas.FirstOrDefault(r => r.IdReserva == Id);
         }
 
-        public void FazerReserva(Reserva NovaReserva)
+        /// <summary>
+        /// Cadastra uma nova reserva
+        /// </summary>
+        /// <param name="NovaReserva">Objeto NovaReserva que será cadastrada</param>
+        public void Cadastrar(Reserva NovaReserva)
         {
             ctx.Reservas.Add(NovaReserva);
-            ctx.SaveChanges(); 
-        }
-
-        public void AtualizarReserva(int Id, Reserva ReservaAtualizada)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Deletar(int id)
-        {
-            Reserva ReservaBusca = BuscarPorId(id);
-
-            ctx.Reservas.Remove(ReservaBusca);
-
             ctx.SaveChanges();
         }
 
-        //public void EditarReserva(int id, Reserva ReservaAtualizado)
-        //{
-        //    Reserva reservaBuscado = BuscarPorId(id);
+        /// <summary>
+        /// Deleta uma reserva existente
+        /// </summary>
+        /// <param name="Id">ID da reserva que será deletada</param>
+        public void Deletar(int Id)
+        {
+            ctx.Reservas.Remove(BuscarPorId(Id));
+            ctx.SaveChanges();
+        }
 
-        //    if (ReservaAtualizado.IdSituacaoReserva != null)
-        //    {
-        //        reservaBuscado.IdSituacaoReserva = ReservaAtualizado.IdSituacaoReserva;
-        //    }
-
-        //    ctx.Reservas.Update(reservaBuscado);
-
-        //    ctx.SaveChanges();
-        //}
+        /// <summary>
+        /// Lista todas as reservas
+        /// </summary>
+        /// <returns>Uma lista de Reservas</returns>
+        public List<Reserva> Listar()
+        {
+            return ctx.Reservas.ToList();
+        }
     }
 }
