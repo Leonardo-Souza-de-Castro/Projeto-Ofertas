@@ -4,15 +4,15 @@ import MaskedInput from '../services/MaskedInput';
 
 import '../assets/CSS/cadastro_empresa.css'
 
-export default class CadastroEmpresa extends Component {
+export default class CadastroONG extends Component {
     constructor(props){
         super(props)
         this.state = {
             CNPJ: '',
-            CNAE: '',
+            Nome: '',
             email: '',
             senha: '',
-            IdTipoUsuario: 1
+            IdTipoUsuario: 2
         }
     }
 
@@ -23,7 +23,7 @@ export default class CadastroEmpresa extends Component {
         return (
             <div className="Fundo_Cadastro">
                 <div className="box-cadastro-usuario">
-                    <h1>Empresa</h1>
+                    <h1>ONG's</h1>
                     <form action="" className="formulario-cadastro-usuario">
                         <div className="container-formulario">
                             <div className="coluna1">
@@ -38,8 +38,8 @@ export default class CadastroEmpresa extends Component {
                             </div>
                             <div className="coluna1">
                                 <div className="box-input">
-                                    <span className="campo">CNEA</span>
-                                    <input type="text" placeholder="*******" className="input-cadastro-usuario" name="CNAE" value={this.state.CNAE} onChange={this.atualizaStateCampo}/>
+                                    <span className="campo">Nome</span>
+                                    <input type="text" placeholder="Nome da ONG" className="input-cadastro-usuario" name="Nome" value={this.state.Nome} onChange={this.atualizaStateCampo}/>
                                 </div>
                                 <div className="box-input">
                                     <span className="campo">CNPJ</span>

@@ -1,79 +1,125 @@
-import { Component } from 'react';
+import { Component } from "react";
+import axios from "axios";
+import MaskedInput from '../services/MaskedInput';
 
-import '../assets/css/cadastrar_cliente.css';
+import '../assets/CSS/cadastro_empresa.css'
 
-export default class Cadastrar extends Component {
+export default class CadastroCliente extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            idProntuario: 0,
-            idMedico: 0,
-            idStatus: 3,
-            idClinica: 0,
-            dataConsulta: new Date(),
+            cep: '',
+            bairro: '',
+            logradouro: '',
+            municipio: '',
+            estado: '',
 
-            listaPacientes: [],
-            listaMedicos: [],
-            listaClinicas: [],
-            isLoading: false
+            CPF: '',
+            Nome: '',
+            email: '',
+            senha: '',
+            Nis: '',
+            IdTipoUsuario: 0
         }
     }
 
+    buscarendereco = () => {
+        console.log(this.state.cep)
+        axios.get('https://viacep.com.br/ws/' + this.state.cep + '/json/')
+            .then((resposta) => {
+                if (resposta.status === 400) {
+                    console.log('deu errado')
+                    this.setState({
+                        cep: '',
+                        bairro: '',
+                        logradouro: '',
+                        municipio: '',
+                        estado: '',
+                    })
+                }
+                else {
+                    this.setState({
+                        bairro: resposta.data.bairro,
+                        logradouro: resposta.data.logradouro,
+                        municipio: resposta.data.bairro,
+                        estado: resposta.data.localidade,
+                    })
+                }
+            })
+    }
+
+    atualizaStateCampo = (campo) => {
+        this.setState({ [campo.target.name]: campo.target.value });
+    };
+
+
     render() {
         return (
-            <div>
-                <Header />
+            <div className="Fundo_Cadastro">
+                <div className="box-cadastro-usuario">
+                    <h1>Pessoa</h1>
+                    <h2>Cliente</h2>
+                    <form action="" className="formulario-cadastro-usuario">
+                        <div className="container-formulario">
+                            <div className="coluna1">
+                                <div className="box-input">
+                                    <span className="campo">CEP</span>
+                                    <input type="text" placeholder="#####-###" className="input-cadastro-usuario" name="cep" value={this.state.cep} onChange={this.atualizaStateCampo} onBlur={this.buscarendereco} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Numero</span>
+                                    <input type="number" placeholder="Numero da sua Residencia" className="input-cadastro-usuario" name="numero" value={this.state.numero} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Bairro</span>
+                                    <input type="text" placeholder="Bairro" className="input-cadastro-usuario" name="bairro" value={this.state.bairro} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Estado</span>
+                                    <input type="text" placeholder="Estado" className="input-cadastro-usuario" name="estado" value={this.state.estado} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Logradouro</span>
+                                    <input type="text" placeholder="Rua" className="input-cadastro-usuario" name="logradouro" value={this.state.logradouro} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Municipio</span>
+                                    <input type="text" placeholder="Rua" className="input-cadastro-usuario" name="municipio" value={this.state.municipio} onChange={this.atualizaStateCampo} />
+                                </div>
+                            </div>
+                            <div className="coluna1">
+                                <div className="box-input">
+                                    <span className="campo">E-mail</span>
+                                    <input type="email" placeholder="exemplo@email.com" className="input-cadastro-usuario" name="email" value={this.state.email} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Senha</span>
+                                    <input type="password" placeholder="senha" className="input-cadastro-usuario" name="senha" value={this.state.senha} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">Nome</span>
+                                    <input type="text" placeholder="Nome" className="input-cadastro-usuario" name="Nome" value={this.state.Nome} onChange={this.atualizaStateCampo} />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">CPF</span>
+                                    <MaskedInput
+                                        className="input-cadastro-usuario"
+                                        mask="999.999.999-99"
+                                        name="CPF"
+                                        value={this.state.CPF}
+                                        onChange={this.atualizaStateCampo}
 
-                <main>
-                    <section className="container-formulario">
-                        <h1>Cadastro de Consulta</h1>
-                        <form action="" className="box-inputs" onSubmit={this.cadastrarConsulta}>
-                            <select name="idProntuario" value={this.state.idProntuario} onChange={this.atualizaStateCampo}>
-                                <option value="0" selected disabled>
-                                    Selecione o Paciente
-                                </option>
-
-                                {this.state.listaPacientes.map((tema) => {
-                                    return (
-                                        <option key={tema.idProntuario} value={tema.idProntuario}>
-                                            {tema.nome}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <input type="datetime-local" name="dataConsulta" required="required" value={this.state.dataConsulta} onChange={this.atualizaStateCampo} />
-                            <select name="idMedico" value={this.state.idMedico} onChange={this.atualizaStateCampo}>
-                                <option value="0" selected disabled>
-                                    Selecione o Medico
-                                </option>
-
-                                {this.state.listaMedicos.map((tema) => {
-                                    return (
-                                        <option key={tema.idMedico} value={tema.idMedico}>
-                                            {tema.nome}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            <select name="idClinica" value={this.state.idClinica} onChange={this.atualizaStateCampo}>
-                                <option value="0" selected disabled>
-                                    Selecione a Clinica
-                                </option>
-
-                                {this.state.listaClinicas.map((tema) => {
-                                    return (
-                                        <option key={tema.idClinica} value={tema.idClinica}>
-                                            {tema.nomeFantasia}
-                                        </option>
-                                    );
-                                })}
-                            </select>
-                            {
-                                this.state.isLoading === true ? <button disabled>Cadastrando...</button> : <button className="Entrando">Cadastrar</button>
-                            }
-                        </form>
-                    </section>
-                </main>
+                                    />
+                                </div>
+                                <div className="box-input">
+                                    <span className="campo">NIS</span>
+                                    <input type="text" placeholder="###########" className="input-cadastro-usuario" name="Nis" value={this.state.Nis} onChange={this.atualizaStateCampo} />
+                                </div>
+                            </div>
+                        </div>
+                        <button className="btn-cadastro-usuario">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         )
     }
