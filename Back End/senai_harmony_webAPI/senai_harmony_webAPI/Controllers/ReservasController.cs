@@ -19,6 +19,8 @@ namespace senai_harmony_webAPI.Controllers
         /// Objeto que irá receber todos os métodos da interface
         /// </summary>
         private IReservaRepository _reservaRepository { get; set; }
+        private IProdutoRepository _produtoRepository { get; set; }
+
 
         /// <summary>
         /// Instancia o objeto para que haja referência às implementações no repositório
@@ -26,9 +28,14 @@ namespace senai_harmony_webAPI.Controllers
         public ReservasController()
         {
             _reservaRepository = new ReservaRepository();
+            _produtoRepository = new ProdutoRepository();
         }
 
 
+        /// <summary>
+        /// Lista todas as Reservas existentes
+        /// </summary>
+        /// <returns>Uma lista de Reservas</returns>
         /// <summary>
         /// Lista todas as Reservas existentes
         /// </summary>
@@ -72,11 +79,28 @@ namespace senai_harmony_webAPI.Controllers
         /// <param name="NovaReserva">Reserva a ser cadastrada</param>
         /// <returns>Um status code 201 - Created</returns>
         [HttpPost]
-        public IActionResult FazerReserva(Reserva NovaReserva)
+        public IActionResult CriarReserva(Reserva NovaReserva)
         {
+            Produto p = _produtoRepository.BuscarPorId(NovaReserva.IdProduto);
+            NovaReserva.IdUsuario = p.IdUsuario;
+
             _reservaRepository.FazerReserva(NovaReserva);
 
             return StatusCode(201);
+        }
+
+        [HttpPut("{Id}")]
+        public IActionResult Put(int Id, Reserva ReservaAtualizada)
+        {
+            try
+            {
+                _reservaRepository.Editar(Id, ReservaAtualizada);
+                return StatusCode(204);
+            }
+            catch (Exception Erro)
+            {
+                return BadRequest(Erro);
+            }
         }
 
 

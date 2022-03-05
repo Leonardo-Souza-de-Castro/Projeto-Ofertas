@@ -7752,19 +7752,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\livia\\.nuget\\packages\\": {}
+    "C:\\Users\\mathe\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\livia\\OneDrive\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
       "projectName": "senai_harmony_webAPI",
-      "projectPath": "C:\\Users\\livia\\OneDrive\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
-      "packagesPath": "C:\\Users\\livia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\livia\\OneDrive\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\OneDrive\\Área de Trabalho\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\livia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7843,7 +7843,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

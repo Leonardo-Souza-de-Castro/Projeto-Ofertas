@@ -35,8 +35,10 @@ namespace senai_harmony_webAPI.Context
             {
                 // SENAI
                 //optionsBuilder.UseSqlServer("Data Source=NOTE0113F4\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
-               //  Casa
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
+                //  Casa
+                // optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
+
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-UGA6GDJ\\SQLEXPRESSS; Initial Catalog=OFERTA; integrated security=true;");
             }
         }
 

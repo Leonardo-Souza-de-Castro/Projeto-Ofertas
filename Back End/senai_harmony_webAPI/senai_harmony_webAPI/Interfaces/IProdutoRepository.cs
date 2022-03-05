@@ -51,5 +51,6 @@ namespace senai_harmony_webAPI.Interfaces
         /// <param name="Id">ID do produto que será buscado</param>
         /// <returns>Um produto buscado</returns>
         Produto BuscarPorId(int Id);
+        Produto BuscarPorId(int? idProduto);
     }
 }

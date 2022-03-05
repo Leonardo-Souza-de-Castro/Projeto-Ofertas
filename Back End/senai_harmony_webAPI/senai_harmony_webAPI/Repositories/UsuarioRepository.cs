@@ -49,11 +49,13 @@ namespace senai_harmony_webAPI.Repositories
         }
 
 
-        public void Deletar(int Id)
+        /// <summary>
+        /// Deleta um usuário existente
+        /// </summary>
+        /// <param name="IdUsuario">ID do usuário que será deletado</param>
+        public void Deletar(int IdUsuario)
         {
-            Usuario UsuarioBuscado = BuscarPorId(Id);
-
-            ctx.Usuarios.Remove(UsuarioBuscado);
+            ctx.Usuarios.Remove(BuscarPorId(IdUsuario));
 
             ctx.SaveChanges();
         }
