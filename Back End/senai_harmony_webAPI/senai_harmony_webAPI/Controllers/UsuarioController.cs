@@ -38,18 +38,18 @@ namespace senai_harmony_webAPI.Controllers
         /// <summary>
         /// Busca um usuário através do ID
         /// </summary>
-        /// <param name="IdUsuario">ID do usuário que será buscado</param>
+        /// <param name="Id">ID do usuário que será buscado</param>
         /// <returns>Um usuário buscado e um status code 200 - Ok</returns>
-        [HttpGet("IdUsuario")]
-        public IActionResult BuscarpPorId(int IdUsuario)
+        [HttpGet("Id")]
+        public IActionResult BuscarpPorId(int Id)
         {
-            Usuario usuarioBuscado = _usuarioRepository.BuscarPorId(IdUsuario);
+            Usuario UsuarioBuscado = _usuarioRepository.BuscarPorId(Id);
 
-            if (usuarioBuscado == null)
+            if (UsuarioBuscado == null)
             {
                 return NotFound("O Usuário informado não existe no sistema!");
             }
-            return Ok(usuarioBuscado);
+            return Ok(UsuarioBuscado);
         }
 
         /// <summary>
@@ -60,24 +60,29 @@ namespace senai_harmony_webAPI.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Usuario NovoUsuario)
         {
-            _usuarioRepository.Cadastrar(NovoUsuario);
+                //fazer erificacao se ja tem o msm email cadastrado
+                _usuarioRepository.Cadastrar(NovoUsuario);
 
-            return StatusCode(201);
+                return StatusCode(201);
+            
+
+            return BadRequest("Usuario já cadastrado!");
+            
         }
 
         /// <summary>
         /// Atualiza um usuário existente
         /// </summary>
-        /// <param name="id">ID do usuário que será atualizado</param>
-        /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
+        /// <param name="Id">ID do usuário que será atualizado</param>
+        /// <param name="UsuarioAtualizado">Objeto com as novas informações</param>
         /// <returns>Um status code 204 - No Content</returns>
-        [HttpPut("id")]
-        public IActionResult Put(int id, Usuario usuarioAtualizado)
+        [HttpPut("Id")]
+        public IActionResult Put(int Id, Usuario UsuarioAtualizado)
         {
             try
             {
                 // Faz a chamada para o método
-                _usuarioRepository.Atualizar(id, usuarioAtualizado);
+                _usuarioRepository.Atualizar(Id, UsuarioAtualizado);
 
                 // Retorna um status code
                 return StatusCode(204);
@@ -92,12 +97,12 @@ namespace senai_harmony_webAPI.Controllers
         /// <summary>
         /// Deleta um usuário
         /// </summary>
-        /// <param name="idUsuario">id do Usuário a ser deletado</param>
+        /// <param name="Id">id do Usuário a ser deletado</param>
         /// <returns>Um status code 204 - No content</returns>
-        [HttpDelete("IdUsuario")]
-        public IActionResult Deletar(int idUsuario)
+        [HttpDelete("{Id}")]
+        public IActionResult Deletar(int Id)
         {
-            _usuarioRepository.Deletar(idUsuario);
+            _usuarioRepository.Deletar(Id);
 
             return StatusCode(204);
         }

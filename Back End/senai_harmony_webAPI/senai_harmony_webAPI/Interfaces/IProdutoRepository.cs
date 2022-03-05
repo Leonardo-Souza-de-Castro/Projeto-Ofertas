@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace senai_harmony_webAPI.Interfaces
 {
-    interface IProdutosRepository
+    interface IProdutoRepository
     {
         /// <summary>
         /// Lista todos os produtos
@@ -18,38 +18,38 @@ namespace senai_harmony_webAPI.Interfaces
         /// Lista todos os produtos da empresa
         /// </summary>
         /// <returns>Uma lista de produtos</returns>
-        List<Produto> ListarInstituicao(int idInstituicao);
+        List<Produto> ListarInstituicao(int IdInstituicao);
 
         /// <summary>
         /// Lista todos os produtos da determinada categoria
         /// </summary>
         /// <returns>Uma lista de produtos</returns>
-        List<Produto> ListarCategoria(int idCategoria);
+        List<Produto> ListarCategoria(int IdCategoria);
 
         /// <summary>
         /// Cadastra um novo produto
         /// </summary>
-        /// <param name="novoProduto">Objeto novoProduto que será cadastrado</param>
-        void Cadastrar(Produto novoProduto);
+        /// <param name="NovoProduto">Objeto novoProduto que será cadastrado</param>
+        void Cadastrar(Produto NovoProduto);
 
         /// <summary>
         /// Atualiza um produto existente
         /// </summary>
-        /// <param name="id">ID do produto que será atualizado</param>
-        /// <param name="usuarioAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Produto produtoAtualizado);
+        /// <param name="Id">ID do produto que será atualizado</param>
+        /// <param name="ProdutoAtualizado">Objeto com as novas informações</param>
+        void Atualizar(int Id, Produto ProdutoAtualizado);
 
         /// <summary>
         /// Deleta um produto existente
         /// </summary>
-        /// <param name="id">ID do produto que será deletado</param>
-        void Deletar(int id);
+        /// <param name="Id">ID do produto que será deletado</param>
+        void Deletar(int Id);
 
         /// <summary>
         /// Busca um produto através do ID
         /// </summary>
-        /// <param name="id">ID do produto que será buscado</param>
+        /// <param name="Id">ID do produto que será buscado</param>
         /// <returns>Um produto buscado</returns>
-        Produto BuscarPorId(int id);
+        Produto BuscarPorId(int Id);
     }
 }

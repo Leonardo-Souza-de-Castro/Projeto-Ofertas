@@ -13,52 +13,45 @@ namespace senai_harmony_webAPI.Repositories
          
         OFERTAContext ctx = new OFERTAContext();
 
-        public void Atualizar(int id, Usuario UsuarioAtualizado)
+        public void Atualizar(int Id, Usuario UsuarioAtualizado)
         {
-            // Busca um usuário através do id
-            Usuario usuarioBuscado = ctx.Usuarios.Find(id);
+            Usuario UsuarioBuscado = ctx.Usuarios.Find(Id);
 
-            // Verifica se o e-mail do usuário foi informado
             if (UsuarioAtualizado.Email != null)
             {
-                // Atribui os novos valores ao campos existentes
-                usuarioBuscado.Email = UsuarioAtualizado.Email;
+                UsuarioBuscado.Email = UsuarioAtualizado.Email;
             }
 
-            // Verifica se a senha do usuário foi informado
             if (UsuarioAtualizado.Senha != null)
             {
-                // Atribui os novos valores ao campos existentes
-                usuarioBuscado.Senha = UsuarioAtualizado.Senha;
+                UsuarioBuscado.Senha = UsuarioAtualizado.Senha;
             }
 
-            // Atualiza o tipo de usuário que foi buscado
-            ctx.Usuarios.Update(usuarioBuscado);
+            ctx.Usuarios.Update(UsuarioBuscado);
 
-            // Salva as informações para serem gravadas no banco
             ctx.SaveChanges();
         }
 
 
-        public Usuario BuscarPorId(int id)
+        public Usuario BuscarPorId(int Id)
         {
-            return ctx.Usuarios.FirstOrDefault(p => p.IdUsuario == id);
+            return ctx.Usuarios.FirstOrDefault(p => p.IdUsuario == Id);
         }
 
-        public void Cadastrar(Usuario novoUsuario)
+        public void Cadastrar(Usuario NovoUsuario)
         {
             // Adiciona este novoUsuario
-            ctx.Usuarios.Add(novoUsuario);
+            ctx.Usuarios.Add(NovoUsuario);
 
             // Salva as informações para serem gravadas no banco de dados
-            ctx.Usuarios.Add(novoUsuario);
+            ctx.Usuarios.Add(NovoUsuario);
             ctx.SaveChanges();
         }
 
 
-        public void Deletar(int id)
+        public void Deletar(int Id)
         {
-            Usuario UsuarioBuscado = BuscarPorId(id);
+            Usuario UsuarioBuscado = BuscarPorId(Id);
 
             ctx.Usuarios.Remove(UsuarioBuscado);
 
@@ -70,9 +63,9 @@ namespace senai_harmony_webAPI.Repositories
             return ctx.Usuarios.Include(C => C.IdTipoUsuarioNavigation).ToList();
         }
 
-        public Usuario Login(string email, string senha)
+        public Usuario Login(string Email, string Senha)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
         }
     }
 }

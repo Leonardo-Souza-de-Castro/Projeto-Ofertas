@@ -28,20 +28,20 @@ namespace senai_harmony_webAPI.Interfaces
         /// Atualiza um cliente existente
         /// </summary>
         /// <param name="id">ID do cliente que será atualizado</param>
-        /// <param name="clienteAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Cliente clienteAtualizado);
+        /// <param name="ClienteAtualizado">Objeto com as novas informações</param>
+        void Atualizar(int Id, Cliente ClienteAtualizado);
 
         /// <summary>
         /// Deleta um cliente existente
         /// </summary>
         /// <param name="id">ID do cliente que será deletado</param>
-        void Deletar(int id);
+        void Deletar(int Id);
 
         /// <summary>
         /// Busca um cliente através do ID
         /// </summary>
-        /// <param name="id">ID do cliente que será buscado</param>
+        /// <param name="Id">ID do cliente que será buscado</param>
         /// <returns>Um cliente buscado</returns>
-        Cliente BuscarPorId(int id);
+        Cliente BuscarPorId(int Id);
     }
 }

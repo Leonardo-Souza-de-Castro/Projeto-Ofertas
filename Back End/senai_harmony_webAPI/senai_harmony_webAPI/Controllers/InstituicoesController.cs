@@ -13,12 +13,12 @@ namespace senai_harmony_webAPI.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ProdutosController : ControllerBase
+    public class InstituicoesController : ControllerBase
     {
-        private IProdutoRepository _produtoRepository { get; set; }
-        public ProdutosController()
+        private IInstituicaoRepository _instituicaoRepository { get; set; }
+        public InstituicoesController()
         {
-            _produtoRepository = new ProdutoRepository();
+            _instituicaoRepository = new InstituicaoRepository();
         }
 
         [HttpGet]
@@ -26,7 +26,7 @@ namespace senai_harmony_webAPI.Controllers
         {
             try
             {
-                return Ok(_produtoRepository.Listar());
+                return Ok(_instituicaoRepository.Listar());
             }
             catch (Exception Erro)
             {
@@ -39,7 +39,7 @@ namespace senai_harmony_webAPI.Controllers
         {
             try
             {
-                return Ok(_produtoRepository.BuscarPorId(Id));
+                return Ok(_instituicaoRepository.BuscarPorId(Id));
             }
             catch (Exception Erro)
             {
@@ -48,11 +48,12 @@ namespace senai_harmony_webAPI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Produto NovoProduto)
+        public IActionResult Post(Instituicao NovaInstituicao)
         {
             try
             {
-                _produtoRepository.Cadastrar(NovoProduto);
+                _instituicaoRepository.Cadastrar(NovaInstituicao);
+
                 return StatusCode(201);
             }
             catch (Exception Erro)
@@ -66,7 +67,7 @@ namespace senai_harmony_webAPI.Controllers
         {
             try
             {
-                _produtoRepository.Deletar(Id);
+                _instituicaoRepository.Deletar(Id);
                 return StatusCode(204);
             }
             catch (Exception Erro)
@@ -76,11 +77,11 @@ namespace senai_harmony_webAPI.Controllers
         }
 
         [HttpPut("{Id}")]
-        public IActionResult Put(int Id, Produto ProdutoAtualizado)
+        public IActionResult Put(int Id, Instituicao InstituicaoAtualizada)
         {
             try
             {
-                _produtoRepository.Atualizar(Id, ProdutoAtualizado);
+                _instituicaoRepository.Atualizar(Id, InstituicaoAtualizada);
                 return StatusCode(204);
             }
             catch (Exception Erro)

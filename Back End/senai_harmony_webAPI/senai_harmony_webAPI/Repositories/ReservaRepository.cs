@@ -14,16 +14,25 @@ namespace senai_harmony_webAPI.Repositories
     {
         OFERTAContext ctx = new OFERTAContext();
 
-
-        public Reserva BuscarPorId(int id)
+        public List<Reserva> Listar()
         {
-            return ctx.Reservas.FirstOrDefault(p => p.IdReserva == id);
+            return ctx.Reservas.ToList();
+
         }
 
-        public void RealizarReserva(Reserva NovaReserva)
+        public Reserva BuscarPorId(int Id)
         {
-            ctx.Reservas.Add(NovaReserva);
-            ctx.SaveChanges();
+            return ctx.Reservas.FirstOrDefault(r => r.IdReserva == Id);
+        }
+
+        public void FazerReserva(Reserva NovaReserva)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AtualizarReserva(int Id, Reserva ReservaAtualizada)
+        {
+            throw new NotImplementedException();
         }
 
         public void Deletar(int id)
@@ -35,24 +44,18 @@ namespace senai_harmony_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public void EditarReserva(int id, Reserva ReservaAtualizado)
-        {
-            Reserva reservaBuscado = BuscarPorId(id);
+        //public void EditarReserva(int id, Reserva ReservaAtualizado)
+        //{
+        //    Reserva reservaBuscado = BuscarPorId(id);
 
-            if (ReservaAtualizado.IdSituacaoReserva != null)
-            {
-                reservaBuscado.IdSituacaoReserva = ReservaAtualizado.IdSituacaoReserva;
-            }
+        //    if (ReservaAtualizado.IdSituacaoReserva != null)
+        //    {
+        //        reservaBuscado.IdSituacaoReserva = ReservaAtualizado.IdSituacaoReserva;
+        //    }
 
-            ctx.Reservas.Update(reservaBuscado);
+        //    ctx.Reservas.Update(reservaBuscado);
 
-            ctx.SaveChanges();
-        }
-
-        public List<Reserva> Listar()
-        {
-            return ctx.Reservas.ToList();
-
-        }
+        //    ctx.SaveChanges();
+        //}
     }
 }

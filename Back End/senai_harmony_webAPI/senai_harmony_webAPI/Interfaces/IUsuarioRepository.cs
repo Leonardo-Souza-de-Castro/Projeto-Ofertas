@@ -13,10 +13,10 @@ namespace senai_harmony_webAPI.Interfaces
         /// <summary>
         /// Valida o usuário
         /// </summary>
-        /// <param name="email">E-mail do usuário</param>
-        /// <param name="senha">Senha do usuário</param>
+        /// <param name="Email">E-mail do usuário</param>
+        /// <param name="Senha">Senha do usuário</param>
         /// <returns>Um objeto do tipo Usuario que foi encontrado</returns>
-        Usuario Login(string email, string senha);
+        Usuario Login(string Email, string Senha);
 
 
         /// <summary>
@@ -29,28 +29,28 @@ namespace senai_harmony_webAPI.Interfaces
         /// <summary>
         /// Cadastra um novo usuário
         /// </summary>
-        /// <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
-        void Cadastrar(Usuario novoUsuario);
+        /// <param name="NovoUsuario">Objeto novoUsuario que será cadastrado</param>
+        void Cadastrar(Usuario NovoUsuario);
 
         /// <summary>
         /// Atualiza um usuário existente
         /// </summary>
-        /// <param name="id">ID do usuário que será atualizado</param>
+        /// <param name="Id">ID do usuário que será atualizado</param>
         /// <param name="UsuarioAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, Usuario UsuarioAtualizado);
+        void Atualizar(int Id, Usuario UsuarioAtualizado);
 
 
         /// <summary>
         /// Deleta um usuário existente
         /// </summary>
-        /// <param name="id">ID do usuário que será deletado</param>
-        void Deletar(int id);
+        /// <param name="Id">ID do usuário que será deletado</param>
+        void Deletar(int Id);
 
         /// <summary>
         /// Busca um usuário através do ID
         /// </summary>
-        /// <param name="id">ID do usuário que será buscado</param>
+        /// <param name="Id">ID do usuário que será buscado</param>
         /// <returns>Um usuário buscado</returns>
-        Usuario BuscarPorId(int id);
+        Usuario BuscarPorId(int Id);
     }
 }

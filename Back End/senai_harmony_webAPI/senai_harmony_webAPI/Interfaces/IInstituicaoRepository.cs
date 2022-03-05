@@ -1,4 +1,5 @@
 ﻿using senai_harmony_webAPI.Controllers;
+using senai_harmony_webAPI.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,35 +10,35 @@ namespace senai_harmony_webAPI.Interfaces
     interface IInstituicaoRepository
     {
         /// <summary>
-        /// Lista todos as empresas
+        /// Lista todas as instituicoes
         /// </summary>
-        /// <returns>Uma lista de empresas</returns>
-        List<InstituicaoController> Listar();
+        /// <returns>Uma lista de instituicoes</returns>
+        List<Instituicao> Listar();
 
         /// <summary>
-        /// Cadastra uma nova empresa
+        /// Cadastra uma nova instituicao
         /// </summary>
-        /// <param name="novaEmpresa">Objeto novaEmpresa que será cadastrado</param>
-        void Cadastrar(InstituicaoController novaEmpresa);
+        /// <param name="NovaInstituicao">Objeto NovaInstituicao que será cadastrada</param>
+        void Cadastrar(Instituicao NovaInstituicao);
 
         /// <summary>
-        /// Atualiza uma empresa existente
+        /// Atualiza uma instituicao existente
         /// </summary>
-        /// <param name="id">ID da empresa que será atualizado</param>
-        /// <param name="empresaAtualizado">Objeto com as novas informações</param>
-        void Atualizar(int id, InstituicaoController empresaAtualizado);
+        /// <param name="Id">Id da instituicao que será atualizada</param>
+        /// <param name="InstituicaosAtualizada">Objeto com as novas informações</param>
+        void Atualizar(int Id, Instituicao InstituicaosAtualizada);
 
         /// <summary>
-        /// Deleta um empresa existente
+        /// Deleta uma instituicao existente
         /// </summary>
-        /// <param name="id">ID da empresa que será deletada</param>
-        void Deletar(int id);
+        /// <param name="Id">ID da instituicao que será deletada</param>
+        void Deletar(int Id);
 
         /// <summary>
-        /// Busca um empresa através do ID
+        /// Busca uma instituicao através do ID
         /// </summary>
-        /// <param name="id">ID da empresa que será buscada</param>
-        /// <returns>Uma empresa buscada</returns>
-        InstituicaoController BuscarPorId(int id);
+        /// <param name="Id">ID da instituicao que será buscada</param>
+        /// <returns>Uma instituicao buscada</returns>
+        Instituicao BuscarPorId(int Id);
     }
 }

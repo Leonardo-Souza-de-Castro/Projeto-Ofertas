@@ -51,5 +51,5 @@ ON Reserva.IdProduto = Produto.IdProduto
 GO
 
 -- Converter Data da Consulta do Usuário para Formato (mm-dd-yyyy) 
-SELECT FORMAT (DataValidade, 'dd/MM/yyyy')[Data Consulta]  FROM Produto;
+SELECT FORMAT (DataValidade, 'dd/MM/yyyy')FROM Produto;
 GO

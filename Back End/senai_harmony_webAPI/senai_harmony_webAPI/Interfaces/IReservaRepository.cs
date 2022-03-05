@@ -20,27 +20,27 @@ namespace senai_harmony_webAPI.Interfaces
         /// Cadastra uma nova reserva
         /// </summary>
         /// <param name="NovaReserva">Objeto NovaReserva que será cadastrado</param>
-        void RealizarReserva(Reserva NovaReserva);
+        void FazerReserva(Reserva NovaReserva);
 
         /// <summary>
         /// Atualiza uma reserva existente
         /// </summary>
-        /// <param name="id">ID da reserva que será atualizado</param>
-        /// <param name="ReservaAtualizado">Objeto com as novas informações</param>
-        void EditarReserva(int id, Reserva ReservaAtualizado);
+        /// <param name="Id">ID da reserva que será atualizado</param>
+        /// <param name="ReservaAtualizada">Objeto com as novas informações</param>
+        void AtualizarReserva(int Id, Reserva ReservaAtualizada);
 
         /// <summary>
         /// Deleta uma reserva existente
         /// </summary>
-        /// <param name="id">ID da reserva que será deletada</param>
-        void Deletar(int id);
+        /// <param name="Id">ID da reserva que será deletada</param>
+        void Deletar(int Id);
 
         /// <summary>
         /// Busca uma reserva através do ID
         /// </summary>
-        /// <param name="id">ID da reserva que será buscada</param>
+        /// <param name="Id">ID da reserva que será buscada</param>
         /// <returns>Uma reserva buscado</returns>
-        Reserva BuscarPorId(int id);
+        Reserva BuscarPorId(int Id);
 
     }
 }

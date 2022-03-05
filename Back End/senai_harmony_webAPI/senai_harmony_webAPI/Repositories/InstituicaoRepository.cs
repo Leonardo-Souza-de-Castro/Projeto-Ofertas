@@ -1,4 +1,6 @@
-﻿using senai_harmony_webAPI.Controllers;
+﻿using senai_harmony_webAPI.Context;
+using senai_harmony_webAPI.Controllers;
+using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -9,29 +11,78 @@ namespace senai_harmony_webAPI.Repositories
 {
     public class InstituicaoRepository : IInstituicaoRepository
     {
-        public void Atualizar(int id, InstituicaoController empresaAtualizado)
+        /// <summary>
+        /// Objeto contexto por onde serão chamados os métodos do EF Core
+        /// </summary>
+        OFERTAContext ctx = new OFERTAContext();
+
+        /// <summary>
+        /// Atualiza uma instituicao existente
+        /// </summary>
+        /// <param name="Id">ID da instituicao que será atualizada</param>
+        /// <param name="InstituicaoAtualizada">Objeto com as novas informações</param>
+        public void Atualizar(int Id, Instituicao InstituicaoAtualizada)
         {
-            throw new NotImplementedException();
+            Instituicao InstituicaoBuscada = ctx.Instituicaos.Find(Id);
+
+            if (InstituicaoAtualizada.Cnpj != null)
+            {
+                InstituicaoBuscada.Cnpj = InstituicaoAtualizada.Cnpj;
+            }
+
+            if (InstituicaoAtualizada.NomeFantasia != null)
+            {
+                InstituicaoBuscada.NomeFantasia = InstituicaoAtualizada.NomeFantasia;
+            }
+
+            if (InstituicaoAtualizada.RazaoSocial != null)
+            {
+                InstituicaoBuscada.RazaoSocial = InstituicaoAtualizada.RazaoSocial;
+            }
+
+            ctx.Instituicaos.Update(InstituicaoBuscada);
+
+            ctx.SaveChanges(); ;
         }
 
-        public InstituicaoController BuscarPorId(int id)
+        /// <summary>
+        /// Busca uma instituicao através do ID
+        /// </summary>
+        /// <param name="Id">ID da instituicao que será buscada</param>
+        /// <returns>Uma instituicao buscada</returns>
+        public Instituicao BuscarPorId(int Id)
         {
-            throw new NotImplementedException();
+            return ctx.Instituicaos.FirstOrDefault(i => i.IdInstituicao == Id);
         }
 
-        public void Cadastrar(InstituicaoController novaEmpresa)
+        /// <summary>
+        /// Cadastra uma nova Intituição
+        /// </summary>
+        /// <param name="NovaInstituicao">Objeto NovaInstituicao que será cadastrada</param>
+        public void Cadastrar(Instituicao NovaInstituicao)
         {
-            throw new NotImplementedException();
+            ctx.Instituicaos.Add(NovaInstituicao);
+            ctx.SaveChanges();
         }
 
-        public void Deletar(int id)
+        /// <summary>
+        /// Deleta uma instituicao existente
+        /// </summary>
+        /// <param name="Id">ID da instituicao que será deletada</param>
+        public void Deletar(int Id)
         {
-            throw new NotImplementedException();
+            ctx.Instituicaos.Remove(BuscarPorId(Id));
+            ctx.SaveChanges();
         }
 
-        public List<InstituicaoController> Listar()
+        /// <summary>
+        /// Lista todas as instituicoes
+        /// </summary>
+        /// <returns>Uma lista de instituicoes</returns>
+        public List<Instituicao> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Instituicaos.ToList();
         }
+
     }
 }

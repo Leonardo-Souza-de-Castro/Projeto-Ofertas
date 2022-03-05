@@ -1,4 +1,5 @@
-﻿using senai_harmony_webAPI.Domains;
+﻿using senai_harmony_webAPI.Context;
+using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -7,31 +8,92 @@ using System.Threading.Tasks;
 
 namespace senai_harmony_webAPI.Repositories
 {
-    public class ProdutoRepository : IProdutosRepository
+    public class ProdutoRepository : IProdutoRepository
     {
-        public void Atualizar(int id, Produto produtoAtualizado)
+        OFERTAContext ctx = new OFERTAContext();
+
+        /// <summary>
+        /// Atualiza um Produto existente
+        /// </summary>
+        /// <param name="Id">ID do Produto que será atualizado</param>
+        /// <param name="ProdutoAtualizado">Objeto com as novas informações</param>
+        public void Atualizar(int Id, Produto ProdutoAtualizado)
         {
-            throw new NotImplementedException();
+            Produto ProdutoBuscado = ctx.Produtos.Find(Id);
+
+            if (ProdutoAtualizado.NomeProduto != null)
+            {
+                ProdutoBuscado.NomeProduto = ProdutoAtualizado.NomeProduto;
+            }
+
+            if (ProdutoAtualizado.Descricao != null)
+            {
+                ProdutoBuscado.Descricao = ProdutoAtualizado.Descricao;
+            }
+
+            if (ProdutoAtualizado.Quantidade != 0)
+            {
+                ProdutoBuscado.Quantidade = ProdutoAtualizado.Quantidade;
+            }
+
+            if (ProdutoAtualizado.Preco != 0)
+            {
+                ProdutoBuscado.Preco = ProdutoAtualizado.Preco;
+            }
+
+            if (ProdutoAtualizado.DataValidade < DateTime.Now)
+            {
+                ProdutoBuscado.DataValidade = ProdutoAtualizado.DataValidade;
+            }
+
+            if (ProdutoAtualizado.Imagem != null)
+            {
+                ProdutoBuscado.Imagem = ProdutoAtualizado.Imagem;
+            }
+
+
+            ctx.Produtos.Update(ProdutoBuscado);
+
+            ctx.SaveChanges(); 
         }
 
-        public Produto BuscarPorId(int id)
+        /// <summary>
+        /// Busca um produto através do ID
+        /// </summary>
+        /// <param name="Id">ID do produto que será buscado</param>
+        /// <returns>Um produto buscado</returns>
+        public Produto BuscarPorId(int Id)
         {
-            throw new NotImplementedException();
+            return ctx.Produtos.FirstOrDefault(p => p.IdProduto == Id);
         }
 
-        public void Cadastrar(Produto novoProduto)
+        /// <summary>
+        /// Cadastra um novo Produto
+        /// </summary>
+        /// <param name="NovoProduto">Objeto NovoProduto que será cadastrado</param>
+        public void Cadastrar(Produto NovoProduto)
         {
-            throw new NotImplementedException();
+            ctx.Produtos.Add(NovoProduto);
+            ctx.SaveChanges();
         }
 
-        public void Deletar(int id)
+        /// <summary>
+        /// Deleta um Produto existente
+        /// </summary>
+        /// <param name="Id">ID do Produto que será deletado</param>
+        public void Deletar(int Id)
         {
-            throw new NotImplementedException();
+            ctx.Produtos.Remove(BuscarPorId(Id));
+            ctx.SaveChanges();
         }
 
+        /// <summary>
+        /// Lista todos os Produtos
+        /// </summary>
+        /// <returns>Uma lista de instituicoes</returns>
         public List<Produto> Listar()
         {
-            throw new NotImplementedException();
+            return ctx.Produtos.ToList();
         }
 
         public List<Produto> ListarCategoria(int idCategoria)

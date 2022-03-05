@@ -16,10 +16,10 @@ namespace senai_harmony_webAPI.Repositories
         OFERTAContext ctx = new OFERTAContext();
 
 
-        public void Atualizar(int id, Cliente ClienteAtualizado)
+        public void Atualizar(int Id, Cliente ClienteAtualizado)
         {
             // Busca um usuário através do id
-            Cliente ClienteBuscado = ctx.Cliente.Find(id);
+            Cliente ClienteBuscado = ctx.Cliente.Find(Id);
 
             if (ClienteAtualizado.IdUsuario != null)
             {
@@ -55,9 +55,9 @@ namespace senai_harmony_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public Cliente BuscarPorId(int id)
+        public Cliente BuscarPorId(int Id)
         {
-            return ctx.Cliente.FirstOrDefault(p => p.IdCliente == id);
+            return ctx.Cliente.FirstOrDefault(p => p.IdCliente == Id);
         }
 
         public void Cadastrar(Cliente NovoCliente)
@@ -70,9 +70,9 @@ namespace senai_harmony_webAPI.Repositories
             ctx.SaveChanges();
         }
 
-        public void Deletar(int id)
+        public void Deletar(int Id)
         {
-            Cliente ClienteBuscado = BuscarPorId(id);
+            Cliente ClienteBuscado = BuscarPorId(Id);
 
             ctx.Cliente.Remove(ClienteBuscado);
 
@@ -81,7 +81,7 @@ namespace senai_harmony_webAPI.Repositories
 
         public List<Cliente> Listar()
         {
-            return ctx.Cliente.Include(C => C.IdEnderecoNavigation).ToList();
+            return ctx.Cliente.ToList();
         }
 
  

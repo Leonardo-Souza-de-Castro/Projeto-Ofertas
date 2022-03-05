@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using senai_harmony_webAPI.Repositories;
@@ -12,20 +13,19 @@ namespace senai_harmony_webAPI.Controllers
     [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
-    public class ReservaController : ControllerBase
+    public class ReservasController : ControllerBase
     {
-
         /// <summary>
         /// Objeto que irá receber todos os métodos da interface
         /// </summary>
-        private IReservaRepository _ReservaRepository { get; set; }
+        private IReservaRepository _reservaRepository { get; set; }
 
         /// <summary>
         /// Instancia o objeto para que haja referência às implementações no repositório
         /// </summary>
-        public ReservaController()
+        public ReservasController()
         {
-            _ReservaRepository = new ReservaRepository();
+            _reservaRepository = new ReservaRepository();
         }
 
 
@@ -34,27 +34,35 @@ namespace senai_harmony_webAPI.Controllers
         /// </summary>
         /// <returns>Uma lista de Reservas</returns>
         [HttpGet]
-        public IActionResult Listar()
+        public IActionResult Get()
         {
-            return Ok(_ReservaRepository.Listar());
+            try
+            {
+                return Ok(_reservaRepository.Listar());
+            }
+            catch (Exception Erro)
+            {
+                return BadRequest(Erro);
+            }
         }
 
 
         /// <summary>
         /// Busca um usuário através do ID
         /// </summary>
-        /// <param name="IdReserva">ID da Reserva que será buscado</param>
+        /// <param name="Id">ID da Reserva que será buscado</param>
         /// <returns>Um usuário buscado e um status code 200 - Ok</returns>
-        [HttpGet("IdReserva")]
-        public IActionResult BuscarpPorId(int IdReserva)
+        [HttpGet("{Id}")]
+        public IActionResult GetById(int Id)
         {
-            Reserva ReservaBusca = _ReservaRepository.BuscarPorId(IdReserva);
-
-            if (ReservaBusca == null)
+            try
             {
-                return NotFound("A Reserva informada não existe no sistema!");
+                return Ok(_reservaRepository.BuscarPorId(Id));
             }
-            return Ok(ReservaBusca);
+            catch (Exception Erro)
+            {
+                return BadRequest(Erro);
+            }
         }
 
 
@@ -64,9 +72,9 @@ namespace senai_harmony_webAPI.Controllers
         /// <param name="NovaReserva">Reserva a ser cadastrada</param>
         /// <returns>Um status code 201 - Created</returns>
         [HttpPost]
-        public IActionResult RealizarReserva(Reserva NovaReserva)
+        public IActionResult FazerReserva(Reserva NovaReserva)
         {
-            _ReservaRepository.RealizarReserva(NovaReserva);
+            _reservaRepository.FazerReserva(NovaReserva);
 
             return StatusCode(201);
         }
@@ -80,7 +88,7 @@ namespace senai_harmony_webAPI.Controllers
         [HttpDelete("IdReserva")]
         public IActionResult Deletar(int idReserva)
         {
-            _ReservaRepository.Deletar(idReserva);
+            _reservaRepository.Deletar(idReserva);
 
             return StatusCode(204);
         }
