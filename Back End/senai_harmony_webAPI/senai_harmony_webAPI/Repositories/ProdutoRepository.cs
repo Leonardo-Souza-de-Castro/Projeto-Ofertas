@@ -96,14 +96,5 @@ namespace senai_harmony_webAPI.Repositories
             return ctx.Produtos.ToList();
         }
 
-        public List<Produto> ListarCategoria(int idCategoria)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Produto> ListarInstituicao(int idInstituicao)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

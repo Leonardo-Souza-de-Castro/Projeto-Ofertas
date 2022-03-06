@@ -15,7 +15,6 @@ namespace senai_harmony_webAPI.Repositories
     {
         OFERTAContext ctx = new OFERTAContext();
 
-<<<<<<< HEAD
         /// <summary>
         /// Atualiza uma reserva existente
         /// </summary>
@@ -36,27 +35,17 @@ namespace senai_harmony_webAPI.Repositories
         }
 
         /// <summary>
-        /// Busca uma reserva através do ID
+        /// Busca uma Reserva através do ID
         /// </summary>
-        /// <param name="Id">ID da reserva que será buscada</param>
-        /// <returns>Uma reserva buscada</returns>
+        /// <param name="Id">ID da Reserva que será buscada</param>
+        /// <returns>Uma Reserva buscada</returns>
         public Reserva BuscarPorId(int Id)
-=======
-        public Reserva BuscarPorId(int id)
         {
-            return ctx.Reservas.FirstOrDefault(p => p.IdReserva == id);
+            return ctx.Reservas.FirstOrDefault(i => i.IdReserva == Id);
         }
 
-        public void FazerReserva(Reserva novaReserva)
->>>>>>> 15071d622255deff899ace532b96eb6019e1dd24
-        {
-            ctx.Reservas.Add(novaReserva);
-            ctx.SaveChanges();
-        }
-
-<<<<<<< HEAD
         /// <summary>
-        /// Cadastra uma nova reserva
+        /// Cadastra uma nova Reserva
         /// </summary>
         /// <param name="NovaReserva">Objeto NovaReserva que será cadastrada</param>
         public void Cadastrar(Reserva NovaReserva)
@@ -72,46 +61,16 @@ namespace senai_harmony_webAPI.Repositories
         public void Deletar(int Id)
         {
             ctx.Reservas.Remove(BuscarPorId(Id));
-=======
-
-        public void Editar(int id, Reserva ReservaAtualizado)
-        {
-            Reserva ReservaBuscado = BuscarPorId(id);
-
-            if (ReservaAtualizado.IdSituacaoReserva != null)
-            {
-                ReservaAtualizado.IdSituacaoReserva = ReservaAtualizado.IdSituacaoReserva;
-            }
-
-            ctx.Reservas.Update(ReservaBuscado);
-
->>>>>>> 15071d622255deff899ace532b96eb6019e1dd24
             ctx.SaveChanges();
         }
 
         /// <summary>
         /// Lista todas as reservas
         /// </summary>
-        /// <returns>Uma lista de Reservas</returns>
-        public List<Reserva> Listar()
-        {
-<<<<<<< HEAD
-            return ctx.Reservas.ToList();
-        }
-=======
-            Reserva reservasBuscado = BuscarPorId(id);
-
-            ctx.Reservas.Remove(reservasBuscado);
-
-            ctx.SaveChanges();
-        }
-
+        /// <returns>Uma lista de instituicoes</returns>
         public List<Reserva> Listar()
         {
             return ctx.Reservas.ToList();
-
-
         }
->>>>>>> 15071d622255deff899ace532b96eb6019e1dd24
     }
 }

@@ -18,7 +18,7 @@ namespace senai_harmony_webAPI.Context
         {
         }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
         public virtual DbSet<Endereco> Enderecos { get; set; }
         public virtual DbSet<Finalidade> Finalidades { get; set; }
         public virtual DbSet<Instituicao> Instituicaos { get; set; }
@@ -33,12 +33,8 @@ namespace senai_harmony_webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // SENAI
-                //optionsBuilder.UseSqlServer("Data Source=NOTE0113F4\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
-                //  Casa
-                // optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
-
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-UGA6GDJ\\SQLEXPRESSS; Initial Catalog=OFERTA; integrated security=true;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
             }
         }
 
@@ -49,14 +45,14 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Cliente>(entity =>
             {
                 entity.HasKey(e => e.IdCliente)
-                    .HasName("PK__Cliente__D5946642001F8577");
+                    .HasName("PK__Cliente__D594664217C8D145");
 
                 entity.ToTable("Cliente");
 
-                entity.HasIndex(e => e.Cpf, "UQ__Cliente__C1F8973137592112")
+                entity.HasIndex(e => e.Cpf, "UQ__Cliente__C1F89731133BA470")
                     .IsUnique();
 
-                entity.HasIndex(e => e.Nis, "UQ__Cliente__C7DEC3C3051A62A9")
+                entity.HasIndex(e => e.Nis, "UQ__Cliente__C7DEC3C3D9733396")
                     .IsUnique();
 
                 entity.Property(e => e.Cpf)
@@ -84,7 +80,7 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Endereco>(entity =>
             {
                 entity.HasKey(e => e.IdEndereco)
-                    .HasName("PK__Endereco__0B7C7F1710296920");
+                    .HasName("PK__Endereco__0B7C7F17AFEABCB2");
 
                 entity.ToTable("Endereco");
 
@@ -123,11 +119,11 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Finalidade>(entity =>
             {
                 entity.HasKey(e => e.IdFinalidade)
-                    .HasName("PK__Finalida__36B7CDF7B7308889");
+                    .HasName("PK__Finalida__36B7CDF7376300E4");
 
                 entity.ToTable("Finalidade");
 
-                entity.HasIndex(e => e.Finalidade1, "UQ__Finalida__F396FAF8B061606C")
+                entity.HasIndex(e => e.Finalidade1, "UQ__Finalida__F396FAF854775A23")
                     .IsUnique();
 
                 entity.Property(e => e.Finalidade1)
@@ -140,7 +136,7 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Instituicao>(entity =>
             {
                 entity.HasKey(e => e.IdInstituicao)
-                    .HasName("PK__Institui__B771C0D846218CB4");
+                    .HasName("PK__Institui__B771C0D8AE44D2A1");
 
                 entity.ToTable("Instituicao");
 
@@ -169,7 +165,7 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Produto>(entity =>
             {
                 entity.HasKey(e => e.IdProduto)
-                    .HasName("PK__Produto__2E883C2374E790BE");
+                    .HasName("PK__Produto__2E883C23602D2014");
 
                 entity.ToTable("Produto");
 
@@ -209,7 +205,7 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Reserva>(entity =>
             {
                 entity.HasKey(e => e.IdReserva)
-                    .HasName("PK__Reserva__0E49C69D881F695F");
+                    .HasName("PK__Reserva__0E49C69DAF54784E");
 
                 entity.ToTable("Reserva");
 
@@ -232,11 +228,11 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<SituacaoReserva>(entity =>
             {
                 entity.HasKey(e => e.IdSituacaoReserva)
-                    .HasName("PK__Situacao__CBAF8D4E11F7B86D");
+                    .HasName("PK__Situacao__CBAF8D4E9B9E97CF");
 
                 entity.ToTable("SituacaoReserva");
 
-                entity.HasIndex(e => e.SituacaoReserva1, "UQ__Situacao__96DD23535AF42EF4")
+                entity.HasIndex(e => e.SituacaoReserva1, "UQ__Situacao__96DD2353048F48AD")
                     .IsUnique();
 
                 entity.Property(e => e.SituacaoReserva1)
@@ -249,11 +245,11 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<TipoProduto>(entity =>
             {
                 entity.HasKey(e => e.IdTipoProduto)
-                    .HasName("PK__TipoProd__F71CDF6149CC196E");
+                    .HasName("PK__TipoProd__F71CDF61C215265D");
 
                 entity.ToTable("TipoProduto");
 
-                entity.HasIndex(e => e.TipoProduto1, "UQ__TipoProd__46330B6561EADA12")
+                entity.HasIndex(e => e.TipoProduto1, "UQ__TipoProd__46330B65A589C518")
                     .IsUnique();
 
                 entity.Property(e => e.TipoProduto1)
@@ -266,11 +262,11 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__CA04062B4BA3E1A6");
+                    .HasName("PK__TipoUsua__CA04062BE25FC224");
 
                 entity.ToTable("TipoUsuario");
 
-                entity.HasIndex(e => e.TipoUsuario1, "UQ__TipoUsua__52F7E3AAE1110924")
+                entity.HasIndex(e => e.TipoUsuario1, "UQ__TipoUsua__52F7E3AA719A7EFE")
                     .IsUnique();
 
                 entity.Property(e => e.TipoUsuario1)
@@ -283,11 +279,11 @@ namespace senai_harmony_webAPI.Context
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__5B65BF97123A70BE");
+                    .HasName("PK__Usuario__5B65BF97AFEC8AF0");
 
                 entity.ToTable("Usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__Usuario__A9D105342E030D4A")
+                entity.HasIndex(e => e.Email, "UQ__Usuario__A9D10534009CBD62")
                     .IsUnique();
 
                 entity.Property(e => e.Email)

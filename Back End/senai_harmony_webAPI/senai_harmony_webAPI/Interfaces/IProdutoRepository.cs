@@ -15,18 +15,6 @@ namespace senai_harmony_webAPI.Interfaces
         List<Produto> Listar();
 
         /// <summary>
-        /// Lista todos os produtos da empresa
-        /// </summary>
-        /// <returns>Uma lista de produtos</returns>
-        List<Produto> ListarInstituicao(int IdInstituicao);
-
-        /// <summary>
-        /// Lista todos os produtos da determinada categoria
-        /// </summary>
-        /// <returns>Uma lista de produtos</returns>
-        List<Produto> ListarCategoria(int IdCategoria);
-
-        /// <summary>
         /// Cadastra um novo produto
         /// </summary>
         /// <param name="NovoProduto">Objeto novoProduto que será cadastrado</param>
@@ -51,6 +39,5 @@ namespace senai_harmony_webAPI.Interfaces
         /// <param name="Id">ID do produto que será buscado</param>
         /// <returns>Um produto buscado</returns>
         Produto BuscarPorId(int Id);
-        Produto BuscarPorId(int? idProduto);
     }
 }

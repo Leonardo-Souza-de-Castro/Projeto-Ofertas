@@ -19,7 +19,7 @@ namespace senai_harmony_webAPI.Repositories
         public void Atualizar(int Id, Cliente ClienteAtualizado)
         {
             // Busca um usuário através do id
-            Cliente ClienteBuscado = ctx.Cliente.Find(Id);
+            Cliente ClienteBuscado = ctx.Clientes.Find(Id);
 
             if (ClienteAtualizado.IdUsuario != null)
             {
@@ -49,7 +49,7 @@ namespace senai_harmony_webAPI.Repositories
             }
 
             // Atualiza o tipo de usuário que foi buscado
-            ctx.Cliente.Update(ClienteBuscado);
+            ctx.Clientes.Update(ClienteBuscado);
 
             // Salva as informações para serem gravadas no banco
             ctx.SaveChanges();
@@ -57,16 +57,16 @@ namespace senai_harmony_webAPI.Repositories
 
         public Cliente BuscarPorId(int Id)
         {
-            return ctx.Cliente.FirstOrDefault(p => p.IdCliente == Id);
+            return ctx.Clientes.FirstOrDefault(p => p.IdCliente == Id);
         }
 
         public void Cadastrar(Cliente NovoCliente)
         {
             // Adiciona este novoUsuario
-            ctx.Cliente.Add(NovoCliente);
+            ctx.Clientes.Add(NovoCliente);
 
             // Salva as informações para serem gravadas no banco de dados
-            ctx.Cliente.Add(NovoCliente);
+            ctx.Clientes.Add(NovoCliente);
             ctx.SaveChanges();
         }
 
@@ -74,14 +74,14 @@ namespace senai_harmony_webAPI.Repositories
         {
             Cliente ClienteBuscado = BuscarPorId(Id);
 
-            ctx.Cliente.Remove(ClienteBuscado);
+            ctx.Clientes.Remove(ClienteBuscado);
 
             ctx.SaveChanges();
         }
 
         public List<Cliente> Listar()
         {
-            return ctx.Cliente.ToList();
+            return ctx.Clientes.ToList();
         }
 
  
