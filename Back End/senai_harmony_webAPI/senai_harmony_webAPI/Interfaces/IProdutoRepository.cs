@@ -1,4 +1,5 @@
-﻿using senai_harmony_webAPI.Domains;
+﻿using Microsoft.AspNetCore.Http;
+using senai_harmony_webAPI.Domains;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,5 +40,7 @@ namespace senai_harmony_webAPI.Interfaces
         /// <param name="Id">ID do produto que será buscado</param>
         /// <returns>Um produto buscado</returns>
         Produto BuscarPorId(int Id);
+        void SalvarImagem(IFormFile arquivo, int idProduto);
+        string ConsultarImagem(int idProduto);
     }
 }

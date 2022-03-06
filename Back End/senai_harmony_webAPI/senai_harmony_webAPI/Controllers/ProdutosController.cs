@@ -5,6 +5,7 @@ using senai_harmony_webAPI.Interfaces;
 using senai_harmony_webAPI.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -88,5 +89,57 @@ namespace senai_harmony_webAPI.Controllers
                 return BadRequest(Erro);
             }
         }
+
+        /// <summary>
+        /// Salva uma imagem de perfil do usuário
+        /// </summary>
+        /// <param name="arquivo">imagem a ser salva</param>
+        /// <returns>Status code 200 - OK</returns>
+        [HttpPost("imagem")]
+        public IActionResult postDir(IFormFile arquivo)
+        {
+            try
+            {
+                if (arquivo.Length < 50000000) 
+                    return BadRequest(new { mensagem = "O tamanho máximo da imagem foi atingido." });
+
+                string extensao = arquivo.FileName.Split('.').Last();
+
+                int IdProduto = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                _produtoRepository.SalvarImagem(arquivo, IdProduto);
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Consulta a foto de perfil de um usuário
+        /// </summary>
+        /// <returns>A foto em base64</returns>
+        [HttpGet("imagem")]
+        public IActionResult salvaImagem()
+        {
+            try
+            {
+                int IdProduto = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                string base64 = _produtoRepository.ConsultarImagem(IdProduto);
+
+                return Ok(base64);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        
     }
 }

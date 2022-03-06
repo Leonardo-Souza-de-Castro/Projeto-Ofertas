@@ -4,7 +4,9 @@ using senai_harmony_webAPI.Context;
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using senai_harmony_webAPI.Utils;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace senai_harmony_webAPI.Repositories

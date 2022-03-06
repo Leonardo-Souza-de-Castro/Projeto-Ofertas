@@ -31,9 +31,10 @@ namespace senai_harmony_webAPI.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+            if (!optionsBuilder.IsConfigured) 
             {
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
+                // optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-UGA6GDJ\\SQLEXPRESSS; Initial Catalog=OFERTA; integrated security=true;");
             }
         }
 

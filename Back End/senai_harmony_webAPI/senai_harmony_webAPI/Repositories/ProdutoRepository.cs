@@ -1,8 +1,10 @@
-﻿using senai_harmony_webAPI.Context;
+﻿using Microsoft.AspNetCore.Http;
+using senai_harmony_webAPI.Context;
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -96,5 +98,40 @@ namespace senai_harmony_webAPI.Repositories
             return ctx.Produtos.ToList();
         }
 
+        public string ConsultarImagem(int IdProduto)
+        {
+            CriarPasta();
+
+            string nome_novo = IdProduto.ToString() + ".png";
+            string caminho = Path.Combine("Produtos", nome_novo);
+
+            if (File.Exists(caminho))
+            {
+                byte[] bytesArquivo = File.ReadAllBytes(caminho);
+                return Convert.ToBase64String(bytesArquivo);
+            }
+
+            return null;
+        }
+
+        public void CriarPasta()
+        {
+            string pasta = "Produtos";
+
+            if (!Directory.Exists(pasta))
+            {
+                Directory.CreateDirectory(pasta);
+            }
+        }
+
+        public void SalvarImagem(IFormFile foto, int IdProduto)
+        {
+            string nome_novo = IdProduto.ToString() + ".png";
+
+            using (var stream = new FileStream(Path.Combine("Perfil", nome_novo), FileMode.Create))
+            {
+                foto.CopyTo(stream);
+            }
+        }
     }
 }
