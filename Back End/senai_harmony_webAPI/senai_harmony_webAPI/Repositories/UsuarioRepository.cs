@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using senai_harmony_webAPI.Context;
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
+using senai_harmony_webAPI.Utils;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -67,7 +68,16 @@ namespace senai_harmony_webAPI.Repositories
 
         public Usuario Login(string Email, string Senha)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
+            var Usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == Email);
+
+            if (Usuario != null)
+            {
+                bool Confere = Criptografia.Comparar(Senha, Usuario.Senha);
+                if (Confere)
+                    return Usuario;
+            }
+
+            return null;
         }
     }
 }

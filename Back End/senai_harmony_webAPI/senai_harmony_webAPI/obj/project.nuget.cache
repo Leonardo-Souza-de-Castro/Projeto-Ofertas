@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "0Yq0+rIDyR6SxI7pdTzcBXvU7i+txpbozkw6a6IClyO6/3whuTNjHDONFsyxc1YAYrCQ/30ubDZ7k8ZHUrAJtA==",
+  "dgSpecHash": "cHNqHBDCsthjtUB47PCo5REwqod8mjRRTQwmxBablv7+kIFdJNjmEZfTgFWeHZBb5tYOX7xqMJECNBjXTnT9Nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\livia\\OneDrive\\Desktop\\Projeto-Ofertas\\Back End\\senai_harmony_webAPI\\senai_harmony_webAPI\\senai_harmony_webAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\livia\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.12\\microsoft.aspnetcore.authentication.jwtbearer.5.0.12.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\5.0.12\\microsoft.aspnetcore.jsonpatch.5.0.12.nupkg.sha512",
@@ -45,6 +46,7 @@
     "C:\\Users\\livia\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
+    "C:\\Users\\livia\\.nuget\\packages\\portable.bouncycastle\\1.9.0\\portable.bouncycastle.1.9.0.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.debian.8-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.23-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\livia\\.nuget\\packages\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.fedora.24-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",

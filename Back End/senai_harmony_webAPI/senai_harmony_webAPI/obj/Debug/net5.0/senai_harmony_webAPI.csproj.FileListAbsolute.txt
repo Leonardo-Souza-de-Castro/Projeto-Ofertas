@@ -144,3 +144,5 @@ C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.pdb
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\senai_harmony_webAPI.genruntimeconfig.cache
 C:\Users\mathe\OneDrive\Área de Trabalho\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\obj\Debug\net5.0\ref\senai_harmony_webAPI.dll
+C:\Users\livia\OneDrive\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\BCrypt.Net-Next.dll
+C:\Users\livia\OneDrive\Desktop\Projeto-Ofertas\Back End\senai_harmony_webAPI\senai_harmony_webAPI\bin\Debug\net5.0\BouncyCastle.Crypto.dll

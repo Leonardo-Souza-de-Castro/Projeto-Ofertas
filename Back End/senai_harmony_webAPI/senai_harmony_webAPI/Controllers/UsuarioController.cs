@@ -2,6 +2,7 @@
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
 using senai_harmony_webAPI.Repositories;
+using senai_harmony_webAPI.Utils;
 using System;
 
 namespace senai_harmony_webAPI.Controllers
@@ -60,11 +61,12 @@ namespace senai_harmony_webAPI.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Usuario NovoUsuario)
         {
-                //fazer erificacao se ja tem o msm email cadastrado
-                _usuarioRepository.Cadastrar(NovoUsuario);
 
-                return Ok(NovoUsuario.IdUsuario);
-            
+            //fazer erificacao se ja tem o msm email cadastrado
+            _usuarioRepository.Cadastrar(NovoUsuario);
+
+            return StatusCode(201);
+
         }
 
         /// <summary>
