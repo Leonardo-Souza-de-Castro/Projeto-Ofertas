@@ -1,5 +1,6 @@
 ﻿using senai_harmony_webAPI.Context;
 using senai_harmony_webAPI.Domains;
+using senai_harmony_webAPI.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace senai_harmony_webAPI.Repositories
 {
-    public class EnderecoRepository
+    public class EnderecoRepository : IEnderecoRepository
     {
         /// <summary>
         /// Objeto contexto por onde serão chamados os métodos do EF Core
