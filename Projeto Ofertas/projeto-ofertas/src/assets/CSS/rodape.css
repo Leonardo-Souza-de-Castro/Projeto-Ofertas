@@ -1,0 +1,13 @@
+footer{
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+}
+
+footer span{
+    color: white;
+    font-size: 20px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}

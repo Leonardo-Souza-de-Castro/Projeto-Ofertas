@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Marvel:wght@700&display=swap');
+
+.Fundo_Cadastro{
+    height: 125vh;
+    /* width: 100vw; */
+    background-image: url(../img/fundo_cadastro_usuario.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-cadastro-usuario{
+    width: 60%;
+    height: 77%;
+}
+
+.formulario-cadastro-usuario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(142, 157, 178, 0.78);
+    border-radius: 7px;
+}
+
+.container-formulario{
+    display: flex;
+    width: 100%;
+    height: 80%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.coluna1{
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    justify-content: space-around;
+    height: 50%;
+    width: 47%;
+}
+
+.box-input{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.input-cadastro-usuario{
+    height: 55%;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.box-cadastro-usuario h1{
+    font-size: 100px;
+    color: #FFFFFF;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    margin-bottom: 1%;
+}
+
+.btn-cadastro-usuario{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background-color: #D1E4FB;
+    color: white;
+    width: 20%;
+    height: 12%;
+    border-radius: 10px;
+    font-size: 25px;
+}
+
+.campo{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Marvel:wght@700&display=swap');
+
+* {
+    margin    : 0;
+    padding   : 0;
+    border    : 0;
+    box-sizing: border-box;
+}
+
+.cabecalhohome{
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.containerhome{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.link_cadastro{
+    color: #FFFFFF;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 20px;
+}
+
+.container_tipos_perfil{
+    height: 135vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../img/fundo-banner-home.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo_perfis{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 60px;
+    color: #FFFFFF;
+}
+
+.box_conteudo{
+    height: 85%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-alinhamento{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.box-conteudo-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.box-conteudo-principal h2{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 50px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.box-conteudo-principal p{
+    width: 314px;
+    height: 240px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-family: 'Marvel', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btn_cadastro{
+    width: 45%;
+    height: 10%;
+    border-radius: 10px;
+    background: #D1E4FB;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.linha1{
+    width: 40%;
+    border-top: 4px solid black;
+}
+
+.linha2{
+    width: 40%;
+    border-top: 4px solid black;
+}
+
+.divisao{
+    display: flex;
+    justify-content: space-between;
+}
+
+.organizacao_banner{
+    height: 25vh;
+    display: flex;
+    background-image: url(../img/banner-coracao.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+}
+
+.banner_info_site{
+    /* width: 98vw; */
+    height: 25vh;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.info_site{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foco_secundario{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+}
+
+.foco_principal{
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    color: #000;
+}
+
+.divisoria{
+    border: 1px solid black;
+    height: 70%;
+}
+
+.container_estrutura{
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 283vh;
+}
+
+.box_produtos{
+    background-color: white;
+    width: 95vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 38%;
+    border-radius: 10px;
+}
+
+.box_produtos h3{
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    color: #000;
+    width: 32%;
+    text-align: center;
+}
+
+.box_info{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.info_produtos{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    align-items: center;
+}
+
+.info_produtos p{
+    font-size: 25px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+    width: 79%;
+}
+
+.reduz_tamanho{
+    height:30%;
+}
+
+.titulo_quem{
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    color: #000;
+    width: 32%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.box_quem_somos{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box_quem_somos p{
+    width: 40%;
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+}
+
+.container_marcas{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.container_marcas h3{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    text-align: center;
+}
+
+.box_marcas{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 36%;
+}
+
+.botao_sm{
+    background: #D1E4FB;
+    width: 10%;
+    height: 10%;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    border-radius: 10px;
+}
