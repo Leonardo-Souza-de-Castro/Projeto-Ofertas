@@ -62,7 +62,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"idTipoUsuario\": 2,\r\n        \"email\": \"testandooooooooooo@gmail.com\",\r\n        \"senha\": \"12345\"\r\n}",
+							"raw": "{\r\n    \"idTipoUsuario\": 2,\r\n        \"email\": \"livas@gmail.com\",\r\n        \"senha\": \"12345678910\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -669,10 +669,19 @@
 			"name": "Enderecos",
 			"item": [
 				{
-					"name": "Endereco.ListarTodos",
+					"name": "Endereco.Cadastrar",
 					"request": {
-						"method": "GET",
+						"method": "POST",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"idUsuario\": 6,\r\n        \"logadouro\": \"Rua Testando\",\r\n        \"numero\": 671,\r\n        \"bairro\": \"Testando\",\r\n        \"municipio\": \"São Paulo\",\r\n        \"estado\": \"SP\",\r\n        \"cep\": \"00690000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/Enderecos",
 							"protocol": "http",
@@ -689,19 +698,10 @@
 					"response": []
 				},
 				{
-					"name": "Endereco.Cadastrar",
+					"name": "Endereco.ListarTodos",
 					"request": {
-						"method": "POST",
+						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n     \"idUsuario\": 6,\r\n        \"logadouro\": \"Rua Teste\",\r\n        \"numero\": 671,\r\n        \"bairro\": \"Teste\",\r\n        \"municipio\": \"São Paulo\",\r\n        \"estado\": \"SP\",\r\n        \"cep\": \"00690000\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
 							"raw": "http://localhost:5000/api/Enderecos",
 							"protocol": "http",
