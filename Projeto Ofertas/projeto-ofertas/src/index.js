@@ -18,6 +18,8 @@ import NotFound from './paginas/not_found.jsx';
 import CadastroEmpresa from './paginas/cadastro-empresa';
 import CadastroONG from './paginas/cadastro-ong';
 import CadastroCliente from './pages/cadastar_cliente';
+import Produto from './paginas/produto';
+import Reserva_Produto from './paginas/reserva';
 // import './assets/css/login.css'
 
 const routing = (
@@ -30,6 +32,8 @@ const routing = (
         <Route path="/CadastroEmpresa" component={CadastroEmpresa} />
         <Route path="/CadastroONG" component={CadastroONG} />
         <Route path="/CadastroCliente" component={CadastroCliente} />
+        <Route path="/Produto" component={Produto} />
+        <Route path="/Reserva" component={Reserva_Produto} />
         <Route path="/NotFound" component={NotFound} />
         <Redirect to='/NotFound'/>
       </Switch>

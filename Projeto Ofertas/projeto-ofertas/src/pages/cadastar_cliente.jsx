@@ -2,7 +2,7 @@ import { Component } from "react";
 import axios from "axios";
 import MaskedInput from '../services/MaskedInput';
 
-import '../assets/CSS/cadastro_empresa.css'
+import '../assets/CSS/cadastrar_cliente.css'
 
 export default class CadastroCliente extends Component {
     constructor(props) {
@@ -55,13 +55,13 @@ export default class CadastroCliente extends Component {
 
     render() {
         return (
-            <div className="Fundo_Cadastro">
+            <div className="Fundo_Cadastro_cliente">
                 <div className="box-cadastro-usuario">
                     <h1>Pessoa</h1>
                     <h2>Cliente</h2>
-                    <form action="" className="formulario-cadastro-usuario">
-                        <div className="container-formulario">
-                            <div className="coluna1">
+                    <form action="" className="formulario-cadastro-cliente">
+                        <div className="container-formulario-cliente">
+                            <div className="coluna2">
                                 <div className="box-input">
                                     <span className="campo">CEP</span>
                                     <input type="text" placeholder="#####-###" className="input-cadastro-usuario" name="cep" value={this.state.cep} onChange={this.atualizaStateCampo} onBlur={this.buscarendereco} />
@@ -87,7 +87,7 @@ export default class CadastroCliente extends Component {
                                     <input type="text" placeholder="Rua" className="input-cadastro-usuario" name="municipio" value={this.state.municipio} onChange={this.atualizaStateCampo} />
                                 </div>
                             </div>
-                            <div className="coluna1">
+                            <div className="coluna2">
                                 <div className="box-input">
                                     <span className="campo">E-mail</span>
                                     <input type="email" placeholder="exemplo@email.com" className="input-cadastro-usuario" name="email" value={this.state.email} onChange={this.atualizaStateCampo} />
@@ -117,7 +117,7 @@ export default class CadastroCliente extends Component {
                                 </div>
                             </div>
                         </div>
-                        <button className="btn-cadastro-usuario">Cadastrar</button>
+                        <button className="btn-cadastro-cliente">Cadastrar</button>
                     </form>
                 </div>
             </div>
