@@ -43,8 +43,8 @@ namespace senai_harmony_webAPI.Repositories
 
         public void Cadastrar(Usuario NovoUsuario)
         {
-            // Adiciona este novoUsuario
-            ctx.Usuarios.Add(NovoUsuario);
+            //// Adiciona este novoUsuario
+            //ctx.Usuarios.Add(NovoUsuario);
 
             // Salva as informações para serem gravadas no banco de dados
             ctx.Usuarios.Add(NovoUsuario);
@@ -70,16 +70,18 @@ namespace senai_harmony_webAPI.Repositories
 
         public Usuario Login(string Email, string Senha)
         {
-            var Usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == Email);
+            //var Usuario = ctx.Usuarios.FirstOrDefault(u => u.Email == Email);
 
-            if (Usuario != null)
-            {
-                bool Confere = Criptografia.Comparar(Senha, Usuario.Senha);
-                if (Confere)
-                    return Usuario;
-            }
+            //if (Usuario != null)
+            //{
+            //    bool Confere = Criptografia.Comparar(Senha, Usuario.Senha);
+            //    if (Confere)
+            //        return Usuario;
+            //}
 
-            return null;
+            //return null;
+
+            return ctx.Usuarios.FirstOrDefault(u => u.Email == Email && u.Senha == Senha);
         }
     }
 }

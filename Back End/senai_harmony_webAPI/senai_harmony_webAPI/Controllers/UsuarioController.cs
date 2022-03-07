@@ -65,7 +65,7 @@ namespace senai_harmony_webAPI.Controllers
             //fazer erificacao se ja tem o msm email cadastrado
             _usuarioRepository.Cadastrar(NovoUsuario);
 
-            return StatusCode(201);
+            return Ok(NovoUsuario.IdUsuario);
 
         }
 

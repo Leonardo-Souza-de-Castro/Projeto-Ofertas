@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using senai_harmony_webAPI.Context;
 using senai_harmony_webAPI.Domains;
 using senai_harmony_webAPI.Interfaces;
@@ -66,7 +67,7 @@ namespace senai_harmony_webAPI.Repositories
         /// <returns>Um produto buscado</returns>
         public Produto BuscarPorId(int Id)
         {
-            return ctx.Produtos.FirstOrDefault(p => p.IdProduto == Id);
+            return ctx.Produtos.Include(p => p.IdFinalidadeNavigation).FirstOrDefault(p => p.IdProduto == Id);
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace senai_harmony_webAPI.Repositories
         /// <returns>Uma lista de instituicoes</returns>
         public List<Produto> Listar()
         {
-            return ctx.Produtos.ToList();
+            return ctx.Produtos.Include(p => p.IdFinalidadeNavigation).ToList();
         }
 
         public string ConsultarImagem(int IdProduto)

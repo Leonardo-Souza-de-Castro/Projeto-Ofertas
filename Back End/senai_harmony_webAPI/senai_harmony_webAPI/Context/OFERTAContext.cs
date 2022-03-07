@@ -34,7 +34,8 @@ namespace senai_harmony_webAPI.Context
             if (!optionsBuilder.IsConfigured) 
             {
                 // optionsBuilder.UseSqlServer("Data Source=DESKTOP-9F56DG6\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-UGA6GDJ\\SQLEXPRESSS; Initial Catalog=OFERTA; integrated security=true;");
+                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-UGA6GDJ\\SQLEXPRESSS; Initial Catalog=OFERTA; integrated security=true;");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-V5VRFER\\SQLEXPRESS; Initial Catalog=OFERTA; integrated security=true;");
             }
         }
 

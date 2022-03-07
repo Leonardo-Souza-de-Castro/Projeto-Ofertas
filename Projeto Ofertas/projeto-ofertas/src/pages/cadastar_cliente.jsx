@@ -13,14 +13,67 @@ export default class CadastroCliente extends Component {
             logradouro: '',
             municipio: '',
             estado: '',
+            numero: 0,
 
-            CPF: '',
-            Nome: '',
+            cpf: '',
+            nomeCliente: '',
             email: '',
             senha: '',
-            Nis: '',
-            IdTipoUsuario: 0
+            nis: '',
+            IdTipoUsuario: 2
         }
+    }
+
+    cadastro = (evento) => {
+        evento.preventDefault()
+
+        let usuario = {
+            email: this.state.email,
+            senha: this.state.senha,
+            idTipoUsuario: this.state.idTipoUsuario,
+        }
+
+        axios.post('http://localhost:5000/api/Usuario', usuario)
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.setState({
+                        idUsuario: resposta.data
+                    })
+
+                    let endereco = {
+                        idUsuario: this.state.idUsuario,
+                        logradouro: this.state.logradouro,
+                        numero: this.state.numero,
+                        bairro: this.state.bairro,
+                        municipio: this.state.municipio,
+                        estado: this.state.estado,
+                        cep: this.state.cep,
+                    }
+                    axios.post('http://localhost:5000/api/Enderecos', endereco)
+                        .then(resposta2 => {
+                            if (resposta2.status === 200) {
+                                console.log('Cliente criada')
+
+                                let cliente = {
+                                    idUsuario: this.state.idUsuario,
+                                    cpf: this.state.cpf,
+                                    nomeCliente: this.state.nomeCliente,
+                                    nis: this.state.nis,
+                                    // cnae : this.state.cnpj,
+                                }
+
+                                axios.post('http://localhost:5000/api/Cliente', cliente).then(resposta3 => {
+                                    if (resposta3.status === 201) {
+                                        console.log('funciona')
+                                    }
+                                })
+
+
+                            }
+
+                        }).catch(erro => console.log(erro))
+                }
+            }).catch(erro => console.log(erro))
     }
 
     buscarendereco = () => {
@@ -41,8 +94,9 @@ export default class CadastroCliente extends Component {
                     this.setState({
                         bairro: resposta.data.bairro,
                         logradouro: resposta.data.logradouro,
-                        municipio: resposta.data.bairro,
-                        estado: resposta.data.localidade,
+                        municipio: resposta.data.localidade,
+                        // uf: resposta.data.uf,
+                        estado: resposta.data.uf,
                     })
                 }
             })
@@ -59,7 +113,7 @@ export default class CadastroCliente extends Component {
                 <div className="box-cadastro-usuario">
                     <h1>Pessoa</h1>
                     <h2>Cliente</h2>
-                    <form action="" className="formulario-cadastro-cliente">
+                    <form onSubmit={this.cadastro} className="formulario-cadastro-cliente">
                         <div className="container-formulario-cliente">
                             <div className="coluna2">
                                 <div className="box-input">
@@ -98,22 +152,22 @@ export default class CadastroCliente extends Component {
                                 </div>
                                 <div className="box-input">
                                     <span className="campo">Nome</span>
-                                    <input type="text" placeholder="Nome" className="input-cadastro-usuario" name="Nome" value={this.state.Nome} onChange={this.atualizaStateCampo} />
+                                    <input type="text" placeholder="Nome" className="input-cadastro-usuario" name="nomeCliente" value={this.state.nomeCliente} onChange={this.atualizaStateCampo} />
                                 </div>
                                 <div className="box-input">
                                     <span className="campo">CPF</span>
                                     <MaskedInput
                                         className="input-cadastro-usuario"
                                         mask="999.999.999-99"
-                                        name="CPF"
-                                        value={this.state.CPF}
+                                        name="cpf"
+                                        value={this.state.cpf}
                                         onChange={this.atualizaStateCampo}
 
                                     />
                                 </div>
                                 <div className="box-input">
                                     <span className="campo">NIS</span>
-                                    <input type="text" placeholder="###########" className="input-cadastro-usuario" name="Nis" value={this.state.Nis} onChange={this.atualizaStateCampo} />
+                                    <input type="text" placeholder="###########" className="input-cadastro-usuario" name="nis" value={this.state.nis} onChange={this.atualizaStateCampo} />
                                 </div>
                             </div>
                         </div>

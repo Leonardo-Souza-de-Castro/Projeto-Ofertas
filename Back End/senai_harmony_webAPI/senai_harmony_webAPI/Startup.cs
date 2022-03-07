@@ -59,7 +59,19 @@ namespace senai_harmony_webAPI
                     ValidAudience = "senai_harmony_webAPI"
                 };
             });
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorPolicy",
+                                builder =>
+                                {
+                                    builder.WithOrigins("*")
+                                    .AllowAnyHeader()
+                                    .AllowAnyMethod();
+                                });
+            });
         }
+    
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -79,6 +91,8 @@ namespace senai_harmony_webAPI
             app.UseRouting();
 
             app.UseAuthentication();
+
+            app.UseCors("CorPolicy");
 
             app.UseAuthorization();
 

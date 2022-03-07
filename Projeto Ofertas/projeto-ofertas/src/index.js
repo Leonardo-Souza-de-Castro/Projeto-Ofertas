@@ -20,6 +20,7 @@ import CadastroONG from './paginas/cadastro-ong';
 import CadastroCliente from './pages/cadastar_cliente';
 import Produto from './paginas/produto';
 import Reserva_Produto from './paginas/reserva';
+import Listar_Produtos from './paginas/listar-produtos';
 // import './assets/css/login.css'
 
 const routing = (
@@ -30,6 +31,7 @@ const routing = (
         <Route path="/Login" component={Login} />
         <Route path="/Empresa" component={Home_Empresa} />
         <Route path="/CadastroEmpresa" component={CadastroEmpresa} />
+        <Route path="/ListarProdutos" component={Listar_Produtos} />
         <Route path="/CadastroONG" component={CadastroONG} />
         <Route path="/CadastroCliente" component={CadastroCliente} />
         <Route path="/Produto" component={Produto} />

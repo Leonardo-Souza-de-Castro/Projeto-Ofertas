@@ -45,12 +45,12 @@ export default class Home extends Component {
                             <div className="box-conteudo-principal">
                                 <h2>ONG</h2>
                                 <p>Se você é uma ONG, tem o direito acessar ofertas de nossas empresas parceiras e de arrecadar doações das mesmas e de pessoas voluntárias.</p>
-                                <Link to='/cadastrarong' className='btn_cadastro'>Cadastre-se como ONG</Link>
+                                <Link to='/cadastroong' className='btn_cadastro'>Cadastre-se como ONG</Link>
                             </div>
                             <div className="box-conteudo-principal">
                                 <h2>Pessoa Fisica</h2>
                                 <p>Se você veio aqui para comprar ou doar, faça seu cadastro aqui e começe a mudar vidas!</p>
-                                <Link to='/cadastrarcliente' className='btn_cadastro'>Cadastre-se como pessoa física</Link>
+                                <Link to='/cadastrocliente' className='btn_cadastro'>Cadastre-se como pessoa física</Link>
                             </div>
                         </div>
                     </div>

@@ -14,13 +14,15 @@ export default class Home_Empresas extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            NomeProduto: '',
-            Descricao: '',
-            DataValidade: new Date(),
-            Quantidade: 0,
+            idUsuario: 2,
+            idTipoProduto: 0,
+            idFinalidade: 0,
+            nomeProduto: '',
+            descricao: '',
+            dataValidade: new Date(),
+            quantidade: 0,
             StatusProduto: true,
-            Imagem: '',
-            Id: 0,
+            imagem: '1450',
 
             TipoProduto: [],
             // Finalidade: []
@@ -28,7 +30,7 @@ export default class Home_Empresas extends Component {
     }
 
     BuscarTipos() {
-        axios.get('https://621f854cce99a7de193f9ef6.mockapi.io/TipoProduto', {
+        axios.get('http://localhost:5000/api/TipoProduto', {
 
         }).then((resposta) => {
             if (resposta.status === 200) {
@@ -40,7 +42,7 @@ export default class Home_Empresas extends Component {
     }
 
     atualizaStateCampo = (campo) => {
-        
+
         this.setState({ [campo.target.name]: campo.target.value });
     };
 
@@ -48,27 +50,37 @@ export default class Home_Empresas extends Component {
     cadastrarProdutos = (evento) => {
         evento.preventDefault()
 
+        // if (this.state.StatusProduto === true) {
+        //     this.setState({ idFinalidade: 1 })
+        // }
+        // else {
+        //     this.setState({ idFinalidade: 2 })
+        // }
+
         let produto = {
-            NomeProduto: this.state.NomeProduto,
-            Descricao: this.state.Descricao,
-            DataValidade: this.state.DataValidade,
-            Quantidade: this.state.Quantidade,
-            StatusProduto: this.state.StatusProduto,
-            TipoProduto: this.state.TipoProduto
+            nomeProduto: this.state.nomeProduto,
+            descricao: this.state.descricao,
+            dataValidade: this.state.dataValidade,
+            quantidade: this.state.quantidade,
+            idFinalidade: this.state.idFinalidade,
+            TipoProduto: this.state.TipoProduto,
+            imagem: this.state.imagem
         }
 
-        axios.post('https://621f854cce99a7de193f9ef6.mockapi.io/TipoProduto/5/Produto', produto)
+        axios.post('http://localhost:5000/api/Produtos', produto)
             .then(resposta => {
                 if (resposta.status === 201) {
                     console.log('Produto Cadastrado')
                     this.setState({
-                        NomeProduto: '',
-                        Descricao: '',
-                        DataValidade: new Date(),
-                        Quantidade: 0,
+                        idUsuario: 1,
+                        idTipoProduto: 0,
+                        idFinalidade: 0,
+                        nomeProduto: '',
+                        descricao: '',
+                        dataValidade: new Date(),
+                        quantidade: 0,
                         StatusProduto: true,
-                        Imagem: '',
-                        id: 0,
+                        imagem: '1450',
 
                         TipoProduto: [],
                         // Finalidade: []
@@ -76,16 +88,13 @@ export default class Home_Empresas extends Component {
                 }
             })
             .catch((erro) => {
-                if (erro.toJSON().status === 401) {
-                    this.props.history.push('/login')
-                }
-                else console.log(erro)
+                console.log(erro)
             })
     }
 
     componentDidMount() {
         this.BuscarTipos()
-        console.log(this.state.Id)
+        console.log(this.state.idFinalidade)
         // console.log(this.state.idConsulta)
     }
 
@@ -101,10 +110,10 @@ export default class Home_Empresas extends Component {
                 <section className='fundo_empresas'>
                     <form className='box-cds-produto' onSubmit={this.cadastrarProdutos} action="">
                         <h1>Cadastro de Produtos</h1>
-                        <input type="text" placeholder='Nome do produto' className='input-cadastro' name="NomeProduto" value={this.state.NomeProduto} onChange={this.atualizaStateCampo}/>
-                        <input type="date" className='input-cadastro' name="DataValidade" value={this.state.DataValidade} onChange={this.atualizaStateCampo}/>
-                        <input type="text" placeholder='Descrição' className='input-cadastro' name="Descricao" value={this.state.Descricao} onChange={this.atualizaStateCampo}/>
-                        <select className='input-cadastro' name="Quantidade" value={this.state.Quantidade} onChange={this.atualizaStateCampo}>
+                        <input type="text" placeholder='Nome do produto' className='input-cadastro' name="nomeProduto" value={this.state.nomeProduto} onChange={this.atualizaStateCampo} />
+                        <input type="date" className='input-cadastro' name="dataValidade" value={this.state.dataValidade} onChange={this.atualizaStateCampo} />
+                        <input type="text" placeholder='Descrição' className='input-cadastro' name="descricao" value={this.state.descricao} onChange={this.atualizaStateCampo} />
+                        <select className='input-cadastro' name="quantidade" value={this.state.quantidade} onChange={this.atualizaStateCampo}>
                             <option value="0">Quantidade</option>
                             <option value="1">5</option>
                             <option value="2">10</option>
@@ -113,20 +122,25 @@ export default class Home_Empresas extends Component {
                             <option value="5">25</option>
                             <option value="6">30</option>
                         </select>
-                        <select className='input-cadastro' name="id" value={this.state.id} onChange={this.atualizaStateCampo}>
+                        <select className='input-cadastro' name="idTipoProduto" value={this.state.idTipoProduto} onChange={this.atualizaStateCampo}>
                             <option value="0">Tipo de Produto</option>
                             {this.state.TipoProduto.map((tema) => {
                                 return (
                                     <option key={tema.id} value={tema.id}>
-                                        {tema.TipoProduto}
+                                        {tema.tipoProduto1}
                                     </option>
                                 );
                             })}
                         </select>
-                        <div className='check_doacao'>
-                            <input type="checkbox" name="StatusProduto" value={this.state.StatusProduto} onChange={this.atualizaStateCampo}/>
+                        <select className='input-cadastro' name="idFinalidade" value={this.state.idFinalidade} onChange={this.atualizaStateCampo}>
+                            <option value="0">Finalidade</option>
+                            <option value="1">Doação</option>
+                            <option value="2">Venda</option>
+                        </select>
+                        {/* <div className='check_doacao'>
+                            <input type="checkbox" name="StatusProduto" value={this.state.StatusProduto} onChange={this.atualizaStateCampo} />
                             <span>Doação</span>
-                        </div>
+                        </div> */}
 
                         <input type="file" id="arquivo" accept="image/png, image/jpeg" className='input-cadastro' />
 

@@ -18,10 +18,6 @@ const MaskedInput = ({ value, onChange, name, mask }) => {
         });
     }
 
-    function buscarcep(evento) {
-        
-    }
-
     return (
         <InputMask
             className="input-cadastro-usuario"

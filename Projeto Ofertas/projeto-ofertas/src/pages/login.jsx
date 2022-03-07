@@ -25,7 +25,7 @@ export default class Login extends Component {
         evento.preventDefault()
 
         this.setState({ mensagemErro: '', isLoading: true })
-        axios.post('requisicaodelogin', {
+        axios.post('http://localhost:5000/api/Login', {
             email: this.state.email,
             senha: this.state.senha
         })
@@ -35,15 +35,19 @@ export default class Login extends Component {
                     this.setState({ isLoading: false })
 
                     switch (parsejwt().role) {
-                        case '1':
+                        case '4':
                             this.props.history.push('/Empresa')
                             break;
                         case '2':
                             this.props.history.push('/Cliente')
                             break;
 
-                        default:
+                        case '3':
                             this.props.history.push('/ONG')
+                            break;
+
+                        default:
+                            this.props.history.push('/Cliente')
                             break;
                     }
                 }
